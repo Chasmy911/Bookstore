@@ -3,12 +3,12 @@ import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import { Outlet } from 'react-router-dom';
 
-const Layout: FC<PropsWithChildren> = () => {
+const Layout: FC<PropsWithChildren> = ({ children }) => {
 	return (
 		<div>
 			<Header />
 
-			<Outlet />
+			{children}
 
 			<Footer />
 		</div>

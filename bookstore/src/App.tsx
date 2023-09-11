@@ -1,15 +1,23 @@
 import React from 'react';
-import Footer from './Layout/Footer/Footer';
-import Header from './Layout/Header/Header';
-import Layout from './Layout/Layout';
+import BookItem from './client/components/BookItem/BookItem';
+import Layout from './client/Layout/Layout';
+import AllBook from './pages/AllBook/AllBook';
+import { ThemeProvider } from 'styled-components';
+import { useTypedSelector } from './store/hooks/useTypedSelector';
+import { CreateTheme } from './style/theme';
 
 function App() {
+	const userTheme = useTypedSelector((state) => state.theme.themeMode);
+	const currentTheme = CreateTheme(userTheme);
+
 	return (
-		<div className="App">
-			<Layout>
-				<p> kell</p>
-			</Layout>
-		</div>
+		<ThemeProvider theme={currentTheme}>
+			<div className="App">
+				<Layout>
+					<AllBook />
+				</Layout>
+			</div>
+		</ThemeProvider>
 	);
 }
 

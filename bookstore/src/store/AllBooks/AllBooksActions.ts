@@ -14,7 +14,7 @@ export const allBooksActions: IBooksAction = {
 	setBooks: (books: IBook[]) => {
 		return { type: AllBooksTypes.SET_BOOKS, payload: books };
 	},
-	addToFavourite: (postId: string) => {
-		return { type: AllBooksTypes.ADD_TO_FAVOURITE, payload: postId };
+	addToFavourite: (bookId: string) => {
+		return { type: AllBooksTypes.ADD_TO_FAVOURITE, payload: bookId };
 	}
 };

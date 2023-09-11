@@ -7,7 +7,7 @@ const getBook = async (isbn13: string): Promise<IBook> => {
 	return response.json();
 };
 
-export const getSelectedPostsAsync = (isbn13: string) => {
+export const getSelectedBook = (isbn13: string) => {
 	return (dispatch: (arg0: BaseActionsWithPayload<SelectedBookTypes, IBook | null>) => IBook) => {
 		getBook(isbn13).then((data) => {
 			return dispatch(selectedBookAction.setSelectedBook(data));

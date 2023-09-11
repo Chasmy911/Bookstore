@@ -10,7 +10,8 @@ export const StyledHeader = styled.header`
 	padding: 0 35px;
 	position: fixed;
 	top: 0;
-
+	background-color: white;
+	max-width: 1120px;
 	width: 100%;
 `;
 

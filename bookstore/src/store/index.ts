@@ -3,10 +3,12 @@ import { allBooksReducer } from './AllBooks/AllBooksReducer';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import { secectedBookReducer } from './Book/BookReducer';
+import { themeReducer } from './Theme/ThemeReducer';
 
 const rootReducers = combineReducers({
 	allBooks: allBooksReducer,
-	selectedBook: secectedBookReducer
+	selectedBook: secectedBookReducer,
+	theme: themeReducer
 });
 
 export const store = createStore(rootReducers, composeWithDevTools(applyMiddleware(thunk)));

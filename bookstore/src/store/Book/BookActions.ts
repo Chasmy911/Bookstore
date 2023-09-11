@@ -6,7 +6,7 @@ export enum SelectedBookTypes {
 }
 
 export interface IBookAction {
-	setSelectedBook: (selectedPost: IBook | null) => BaseActionsWithPayload<SelectedBookTypes, IBook | null>;
+	setSelectedBook: (selectedBook: IBook | null) => BaseActionsWithPayload<SelectedBookTypes, IBook | null>;
 	clearSelectedBook: () => BaseActions<SelectedBookTypes>;
 }
 
