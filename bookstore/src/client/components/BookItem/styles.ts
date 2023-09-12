@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { backgroundColor } from './helper';
+import { backgroundColor } from '../../helper';
 
 export const StyledItem = styled.div`
 	width: 350px;
@@ -8,12 +8,13 @@ export const StyledItem = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	align-self: stretch;
+	flex-grow: 0;
 `;
 
 export const StyledImg = styled.div`
 	width: 100%;
 	background-color: ${backgroundColor};
-	height: 270px;
+	height: 280px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -59,3 +60,5 @@ export const Price = styled.div`
 	font-weight: 700;
 	line-height: 32px;
 `;
+
+export const PriceDiv = styled.div`color: black;`;

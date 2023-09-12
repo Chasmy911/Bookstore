@@ -11,8 +11,9 @@ export const StyledHeader = styled.header`
 	position: fixed;
 	top: 0;
 	background-color: white;
-	max-width: 1120px;
 	width: 100%;
+	max-width: 1120px;
+	z-index: 111;
 `;
 
 export const StyledContainer = styled.div`

@@ -5,10 +5,10 @@ import BookItem from '../../client/components/BookItem/BookItem';
 import { useActions } from '../../store/hooks/useActions';
 import { IBook } from '../../types';
 import { useTypedSelector } from '../../store/hooks/useTypedSelector';
+import SubscribeInput from '../../client/components/SubscribeInput/SubscribeInput';
 
 const AllBook = () => {
 	const AllBooks = useTypedSelector((state) => state.allBooks.allBooks);
-
 	console.log(AllBooks);
 
 	const { getAllBooks } = useActions();
@@ -34,6 +34,8 @@ const AllBook = () => {
 						/>
 					))}
 			</BookContainer>
+
+			<SubscribeInput />
 		</AllBookContainer>
 	);
 };

@@ -7,27 +7,38 @@ import {
 	StyledItem,
 	StyledTitle,
 	Image,
-	PriceContainer
+	PriceContainer,
+	PriceDiv
 } from './styles';
 import { IBook } from '../../../types';
+import { useActions } from '../../../store/hooks/useActions';
+import { NavLink } from 'react-router-dom';
 
 const BookItem = (book: IBook) => {
+	const { getSelectedBookAsync } = useActions();
+
+	const getSelectedBook = () => {
+		getSelectedBookAsync(book.isbn13);
+	};
+
 	return (
-		<StyledItem>
-			<StyledImg>
-				<Image src={book.image} />
-			</StyledImg>
-			<StyledTitle>{book.title}</StyledTitle>
-			<StyledInfo>
-				<ArticleContainer>
-					<div>Art.</div>
-					<div>{book.isbn13}</div>
-				</ArticleContainer>
-				<PriceContainer>
-					<div>Price</div>
-					<Price>{book.price}</Price>
-				</PriceContainer>
-			</StyledInfo>
+		<StyledItem onClick={() => getSelectedBook()}>
+			<NavLink to={`/book/${book.isbn13}`}>
+				<StyledImg>
+					<Image src={book.image} />
+				</StyledImg>
+				<StyledTitle>{book.title}</StyledTitle>
+				<StyledInfo>
+					<ArticleContainer>
+						<div>Art.</div>
+						<div>{book.isbn13}</div>
+					</ArticleContainer>
+					<PriceContainer>
+						<PriceDiv>Price</PriceDiv>
+						<Price>{book.price}</Price>
+					</PriceContainer>
+				</StyledInfo>
+			</NavLink>
 		</StyledItem>
 	);
 };

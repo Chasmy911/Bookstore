@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const AllBookContainer = styled.div`
 	max-width: 1120px;
 	margin: 0 auto;
+	padding: 100px 0;
 `;
 
 export const BookContainer = styled.div`
