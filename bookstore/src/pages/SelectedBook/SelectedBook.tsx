@@ -32,10 +32,11 @@ const SelectedBook = () => {
 	const [ book, setBook ] = useState<IBook>();
 	const [ value, SetValue ] = useState('1');
 	const stateBook = useTypedSelector((state) => state.selectedBook.selectedBook);
-	const { clearSelectedBook, addToFavourite, deleteFromFavourite } = useActions();
+	const { clearSelectedBook, addToFavourite, deleteFromFavourite, addBookToCart } = useActions();
 	const favoritebookArr = useSelector(allBooksSelectors.getAllFavoriteSelector);
+	const cartbookArr = useSelector(allBooksSelectors.getCartBooksSelector);
 	const favoriteBook = favoritebookArr.find((item) => item.isbn13 === book?.isbn13);
-	
+	const cartBook = cartbookArr.find((item) => item.isbn13 === book?.isbn13);
 
 	useEffect(() => {
 		if (stateBook) {
@@ -56,10 +57,19 @@ const SelectedBook = () => {
 	}
 
 	const delFromFav = ()=> {
+		
 		if(book) {
 			deleteFromFavourite(book.isbn13)
 		}
 		
+	}
+
+	const addBooktoCart = () => {
+		if (cartBook) {
+			return
+		} 
+		if(book) {
+		addBookToCart(book) }
 	}
 
 	return (
@@ -98,7 +108,7 @@ const SelectedBook = () => {
 								<InfoValue>{book.publisher}</InfoValue>
 							</Info>
 
-							<StyledButtonCart>Add to cart</StyledButtonCart>
+							<StyledButtonCart onClick={addBooktoCart}>Add to cart</StyledButtonCart>
 						</InfoContainer>
 					</BookInfoContainer>
 

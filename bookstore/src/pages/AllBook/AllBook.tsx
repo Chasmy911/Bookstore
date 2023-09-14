@@ -29,7 +29,7 @@ const AllBook = () => {
 							price={book.price}
 							image={book.image}
 							url={book.url}
-							key={book.isbn13}
+							key={book.isbn13 + book.image}
 						/>
 					))}
 			</BookContainer>

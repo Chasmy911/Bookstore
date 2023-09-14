@@ -4,13 +4,11 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import { secectedBookReducer } from './Book/BookReducer';
 import { themeReducer } from './Theme/ThemeReducer';
-import { cartBooksReducer } from './CartBook/CartBookReducer';
 
 const rootReducers = combineReducers({
 	allBooks: allBooksReducer,
 	selectedBook: secectedBookReducer,
-	theme: themeReducer,
-	cartBooks: cartBooksReducer
+	theme: themeReducer
 });
 
 export const store = createStore(rootReducers, composeWithDevTools(applyMiddleware(thunk)));

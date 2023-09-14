@@ -14,6 +14,7 @@ export interface IBook {
 	desc?: string;
 	error?: string;
 	isFavourite?: boolean;
+	amount?: number;
 }
 
 export type BaseActions<T> = {
