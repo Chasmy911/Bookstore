@@ -5,7 +5,7 @@ type defaultStateType = Record<string, IBook[]>;
 
 const defaultState: defaultStateType = {
 	allBooks: [],
-	favouriteBooks: []
+	favoriteBooks: []
 };
 
 export const allBooksReducer = (
@@ -24,11 +24,22 @@ export const allBooksReducer = (
 		case AllBooksTypes.ADD_TO_FAVOURITE:
 			return {
 				...state,
-				allBooks: state.allBooks.map(
-					(book) => (book.isbn13 === action.payload ? { ...book, isFavourite: !book.isFavourite } : book)
-				)
-			};
 
+				allBooks: state.allBooks.map(
+					(book) => (action.payload === book ? { ...book, isFavourite: true } : book)
+				),
+				favoriteBooks: [ ...state.favoriteBooks, { ...action.payload as IBook, isFavorite: true } ]
+			};
+		case AllBooksTypes.DELETE_FROM_FAVOURITE:
+			return {
+				...state,
+
+				allBooks: state.allBooks.map(
+					(book) => (action.payload === book ? { ...book, isFavourite: false } : book)
+				),
+
+				favoriteBooks: state.favoriteBooks.filter((book) => book.isbn13 !== action.payload)
+			};
 		default:
 			return state;
 	}

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Layout from './client/Layout/Layout';
 import AllBook from './pages/AllBook/AllBook';
 import { ThemeProvider } from 'styled-components';

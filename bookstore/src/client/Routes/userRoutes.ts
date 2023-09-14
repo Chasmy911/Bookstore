@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import SelectedBook from '../../pages/SelectedBook/SelectedBook';
+import FavoriteBooks from '../../pages/FavoriteBooks/FavoriteBooks';
 
 type UserRoutes = {
 	id: number;
@@ -17,6 +18,14 @@ export const userRoutes: UserRoutes[] = [
 		path: '/book/:bookId',
 		Component: SelectedBook,
 		title: 'Book',
+		strict: true
+	},
+
+	{
+		id: 3,
+		path: '/book/favotite_book',
+		Component: FavoriteBooks,
+		title: 'Favorite books',
 		strict: true
 	}
 ];

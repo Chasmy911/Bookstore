@@ -1,6 +1,6 @@
 import { Dispatch } from 'redux';
-import { BaseActionsWithPayload, IBook } from '../../types';
-import { AllBooksTypes, allBooksActions } from '../AllBooks/AllBooksActions';
+import { IBook } from '../../types';
+import { allBooksActions } from '../AllBooks/AllBooksActions';
 
 type ResponseType = {
 	books: IBook[];

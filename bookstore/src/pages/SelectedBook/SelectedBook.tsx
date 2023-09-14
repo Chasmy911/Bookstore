@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { IBook } from '../../types';
 import { useTypedSelector } from '../../store/hooks/useTypedSelector';
-import { FacebookOutlined, KeyboardBackspace, MoreHorizOutlined } from '@mui/icons-material';
+import { KeyboardBackspace, MoreHorizOutlined } from '@mui/icons-material';
 import { Box, IconButton, Tab } from '@mui/material';
 import {
 	BookInfoContainer,
@@ -24,11 +24,18 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import SubscribeInput from '../../client/components/SubscribeInput/SubscribeInput';
 import { NavLink } from 'react-router-dom';
+import { useActions } from '../../store/hooks/useActions';
+import { useSelector } from 'react-redux';
+import { allBooksSelectors } from '../../store/AllBooks/AllBooksSelector';
 
 const SelectedBook = () => {
 	const [ book, setBook ] = useState<IBook>();
 	const [ value, SetValue ] = useState('1');
 	const stateBook = useTypedSelector((state) => state.selectedBook.selectedBook);
+	const { clearSelectedBook, addToFavourite, deleteFromFavourite } = useActions();
+	const favoritebookArr = useSelector(allBooksSelectors.getAllFavoriteSelector);
+	const favoriteBook = favoritebookArr.find((item) => item.isbn13 === book?.isbn13);
+	
 
 	useEffect(() => {
 		if (stateBook) {
@@ -40,12 +47,27 @@ const SelectedBook = () => {
 		SetValue(newValue);
 	};
 
+	const deleteSelectedBook = () => {
+		clearSelectedBook();
+	};
+
+	const addtoFav = () => {
+		addToFavourite(book!)
+	}
+
+	const delFromFav = ()=> {
+		if(book) {
+			deleteFromFavourite(book.isbn13)
+		}
+		
+	}
+
 	return (
 		<div>
 			{book &&
 			book.rating && (
 				<SelectedBookContainer>
-					<NavLink to="/">
+					<NavLink to="/" onClick={deleteSelectedBook}>
 						<IconButton>
 							<KeyboardBackspace />
 						</IconButton>
@@ -54,7 +76,10 @@ const SelectedBook = () => {
 
 					<BookInfoContainer>
 						<ImgContainer>
-							<FavoriteRoundedContainer />
+							<FavoriteRoundedContainer
+								onClick={favoriteBook? delFromFav : addtoFav}
+								color={favoriteBook ? 'error' : 'action'}
+							/>
 
 							<img src={book.image} />
 						</ImgContainer>

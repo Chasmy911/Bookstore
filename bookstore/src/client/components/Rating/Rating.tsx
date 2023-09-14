@@ -1,14 +1,12 @@
 import { StarBorderOutlined, StarOutlined } from '@mui/icons-material';
 import React from 'react';
 import { StarContainer } from './styles';
-import { IBook } from '../../../types';
 
 export interface IRating {
 	rating: string;
 }
 
 const Rating = ({ rating }: IRating) => {
-	console.log(rating);
 	if (+rating === 1) {
 		return (
 			<StarContainer>

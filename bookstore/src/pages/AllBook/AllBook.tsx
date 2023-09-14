@@ -9,7 +9,6 @@ import SubscribeInput from '../../client/components/SubscribeInput/SubscribeInpu
 
 const AllBook = () => {
 	const AllBooks = useTypedSelector((state) => state.allBooks.allBooks);
-	console.log(AllBooks);
 
 	const { getAllBooks } = useActions();
 
