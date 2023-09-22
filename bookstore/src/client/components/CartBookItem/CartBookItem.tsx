@@ -22,12 +22,23 @@ import { useSelector } from 'react-redux';
 import { allBooksSelectors } from '../../../store/AllBooks/AllBooksSelector';
 
 const CartBookItem = (book: IBook) => {
-	const { removeBookFromCart } = useActions();
+	const { removeBookFromCart, plusAmountToCart, minusAmountToCart } = useActions();
 	const cartbookArr = useSelector(allBooksSelectors.getCartBooksSelector);
-		const cartBook = cartbookArr.find((item) => item.isbn13 === book?.isbn13);
+	const cartBook = cartbookArr.find((item: IBook) => item.isbn13 === book?.isbn13);
 
 	const removeBook = () => {
 		removeBookFromCart(book.isbn13);
+	};
+	const plusAmount = () => {
+		plusAmountToCart(book.isbn13);
+	};
+
+	const minusAmount = () => {
+		if (cartBook!.amount === 1) {
+			removeBookFromCart(book.isbn13);
+		} else {
+			minusAmountToCart(book.isbn13);
+		}
 	};
 
 	return (
@@ -48,11 +59,11 @@ const CartBookItem = (book: IBook) => {
 							<Price>{book.price}</Price>
 						</PriceContainer>
 						<AmountContainer>
-							<IconButton>
+							<IconButton onClick={minusAmount}>
 								<Remove />
 							</IconButton>
 							<div>{cartBook!.amount}</div>
-							<IconButton>
+							<IconButton onClick={plusAmount}>
 								<Add />
 							</IconButton>
 						</AmountContainer>

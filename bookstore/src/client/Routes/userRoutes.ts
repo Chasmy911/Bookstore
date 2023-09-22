@@ -2,6 +2,8 @@ import { FC } from 'react';
 import SelectedBook from '../../pages/SelectedBook/SelectedBook';
 import FavoriteBooks from '../../pages/FavoriteBooks/FavoriteBooks';
 import Cart from '../../pages/Cart/Cart';
+import SignIn from '../../pages/SignIn/SignIn';
+import Account from '../../pages/Account/Account';
 
 type UserRoutes = {
 	id: number;
@@ -35,6 +37,22 @@ export const userRoutes: UserRoutes[] = [
 		path: '/cart',
 		Component: Cart,
 		title: 'Cart',
+		strict: true
+	},
+
+	{
+		id: 5,
+		path: '/sign_in',
+		Component: SignIn,
+		title: 'Sign In',
+		strict: true
+	},
+
+	{
+		id: 6,
+		path: '/account',
+		Component: Account,
+		title: 'Account',
 		strict: true
 	}
 ];

@@ -59,6 +59,20 @@ export const allBooksReducer = (
 				...state,
 				cartBooks: [ ...cartArr ]
 			};
+		case AllBooksTypes.PLUS_AMOUNT_TO_CART:
+			return {
+				...state,
+				cartBooks: state.cartBooks.map(
+					(book) => (action.payload === book.isbn13 ? { ...book, amount: book.amount! + 1 } : { ...book })
+				) as IBook[]
+			};
+		case AllBooksTypes.MINUS_AMOUNT_TO_CART:
+			return {
+				...state,
+				cartBooks: state.cartBooks.map(
+					(book) => (action.payload === book.isbn13 ? { ...book, amount: book.amount! - 1 } : { ...book })
+				) as IBook[]
+			};
 		default:
 			return state;
 	}

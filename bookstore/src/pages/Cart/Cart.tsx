@@ -1,7 +1,16 @@
 import React, { useEffect } from 'react';
-import { BookContainer, CartContainer, Title } from './styles';
+import {
+	BookContainer,
+	CartContainer,
+	Info,
+	InfoName,
+	InfoValue,
+	StyledButton,
+	Title,
+	TotalDiv,
+	TotalWrapper
+} from './styles';
 import { IBook } from '../../types';
-import FavoriteBookItem from '../../client/components/FavoriteBookItem/FavoriteBookItem';
 import { useSelector } from 'react-redux';
 import { allBooksSelectors } from '../../store/AllBooks/AllBooksSelector';
 import { NavLink } from 'react-router-dom';
@@ -12,6 +21,10 @@ import CartBookItem from '../../client/components/CartBookItem/CartBookItem';
 
 const Cart = () => {
 	const cartArr = useSelector(allBooksSelectors.getCartBooksSelector);
+
+	const total = cartArr.reduce((acc: number, book: IBook) => acc + Number(book.price.replace('$', '')), 0);
+	const vat = total * 0.2;
+	const totalSum = total + vat;
 
 	return (
 		<CartContainer>
@@ -35,6 +48,21 @@ const Cart = () => {
 								key={book.isbn13 + book.image}
 							/>
 						))}
+					<TotalWrapper>
+						<Info>
+							<InfoName>Sum total</InfoName>
+							<InfoValue>{total}</InfoValue>
+						</Info>
+						<Info>
+							<InfoName>VAT</InfoName>
+							<InfoValue>{vat.toFixed(2)}</InfoValue>
+						</Info>
+						<TotalDiv>
+							<div>TOTAL</div>
+							<div>$ {totalSum.toFixed(2)} </div>
+						</TotalDiv>
+						<StyledButton>Check out</StyledButton>
+					</TotalWrapper>
 				</BookContainer>
 			) : (
 				<p>Your cart is empy.</p>

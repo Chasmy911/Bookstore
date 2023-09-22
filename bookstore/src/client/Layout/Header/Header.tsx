@@ -52,7 +52,9 @@ const Header = () => {
 					</NavLink>
 				</IconButton>
 				<IconButton>
-					<PersonOutlineOutlined />
+					<NavLink to="/account">
+						<PersonOutlineOutlined color="action" />
+					</NavLink>
 				</IconButton>
 			</StyledContainer>
 		</StyledHeader>

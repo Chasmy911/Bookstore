@@ -25,3 +25,23 @@ export type BaseActionsWithPayload<T, P> = {
 	type: T;
 	payload: P;
 };
+
+export interface ISignUpUserData {
+	username: string;
+	email: string;
+	password: string;
+	repeatPassword: string;
+}
+
+export interface ILogInUserData {
+	email: string;
+	password: string;
+}
+
+export interface IAccountData {
+	name: string;
+	email: string;
+	password: string;
+	newPassword: string;
+	confirmNewPassword: string;
+}

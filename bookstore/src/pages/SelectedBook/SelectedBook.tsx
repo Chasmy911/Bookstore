@@ -35,8 +35,8 @@ const SelectedBook = () => {
 	const { clearSelectedBook, addToFavourite, deleteFromFavourite, addBookToCart } = useActions();
 	const favoritebookArr = useSelector(allBooksSelectors.getAllFavoriteSelector);
 	const cartbookArr = useSelector(allBooksSelectors.getCartBooksSelector);
-	const favoriteBook = favoritebookArr.find((item) => item.isbn13 === book?.isbn13);
-	const cartBook = cartbookArr.find((item) => item.isbn13 === book?.isbn13);
+	const favoriteBook = favoritebookArr.find((item: IBook) => item.isbn13 === book?.isbn13);
+	const cartBook = cartbookArr.find((item: IBook) => item.isbn13 === book?.isbn13);
 
 	useEffect(() => {
 		if (stateBook) {
