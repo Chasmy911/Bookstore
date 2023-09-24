@@ -15,6 +15,7 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { allBooksSelectors } from '../../../store/AllBooks/AllBooksSelector';
 import { useActions } from '../../../store/hooks/useActions';
+import Search from './Search/Search';
 
 const Header = () => {
 	const favorite = useSelector(allBooksSelectors.getAllFavoriteSelector);
@@ -33,12 +34,7 @@ const Header = () => {
 				</NavLink>
 			</StyledImgDiv>
 
-			<StyledInputContainer>
-				<StyledInput placeholder="Search" />
-				<StyledIconButton>
-					<SearchOutlined />
-				</StyledIconButton>
-			</StyledInputContainer>
+			<Search />
 
 			<StyledContainer>
 				<IconButton>

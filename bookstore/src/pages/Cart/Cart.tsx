@@ -22,7 +22,22 @@ import CartBookItem from '../../client/components/CartBookItem/CartBookItem';
 const Cart = () => {
 	const cartArr = useSelector(allBooksSelectors.getCartBooksSelector);
 
-	const total = cartArr.reduce((acc: number, book: IBook) => acc + Number(book.price.replace('$', '')), 0);
+	const getTotal = () => {
+		return cartArr.reduce(
+			(acc: number, book: IBook) => acc + Number(book.price.replace('$', '')) * book.amount!,
+			0
+		);
+	};
+
+	useEffect(
+		() => {
+			getTotal();
+		},
+		[ cartArr ]
+	);
+
+	const total = getTotal();
+
 	const vat = total * 0.2;
 	const totalSum = total + vat;
 
@@ -51,7 +66,7 @@ const Cart = () => {
 					<TotalWrapper>
 						<Info>
 							<InfoName>Sum total</InfoName>
-							<InfoValue>{total}</InfoValue>
+							<InfoValue>{total.toFixed(2)}</InfoValue>
 						</Info>
 						<Info>
 							<InfoName>VAT</InfoName>

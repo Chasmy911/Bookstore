@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { selectedBookAction } from '../Book/BookActions';
 import { allBooksActions } from '../AllBooks/AllBooksActions';
-import { getAllBooks } from '../AsyncFn/getAllBooksAsync';
+import { getAllBooks, getSearchBooks } from '../AsyncFn/getAllBooksAsync';
 import { getSelectedBookAsync } from '../AsyncFn/getBookByIdAsync';
 import { toggleThemeAction } from '../Theme/ThemeActions';
 
@@ -14,7 +14,8 @@ export const useActions = () => {
 			...allBooksActions,
 			...toggleThemeAction,
 			getAllBooks,
-			getSelectedBookAsync
+			getSelectedBookAsync,
+			getSearchBooks
 		},
 		dispatch
 	);

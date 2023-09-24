@@ -13,6 +13,7 @@ import {
 	InfoValue,
 	Price,
 	SelectedBookContainer,
+	SliderTitle,
 	SocialContainer,
 	StyledButtonCart,
 	StyledTab,
@@ -27,6 +28,8 @@ import { NavLink } from 'react-router-dom';
 import { useActions } from '../../store/hooks/useActions';
 import { useSelector } from 'react-redux';
 import { allBooksSelectors } from '../../store/AllBooks/AllBooksSelector';
+import MainSlider from '../../client/components/Slider/Slider';
+import BookItem from '../../client/components/BookItem/BookItem';
 
 const SelectedBook = () => {
 	const [ book, setBook ] = useState<IBook>();
@@ -35,6 +38,7 @@ const SelectedBook = () => {
 	const { clearSelectedBook, addToFavourite, deleteFromFavourite, addBookToCart } = useActions();
 	const favoritebookArr = useSelector(allBooksSelectors.getAllFavoriteSelector);
 	const cartbookArr = useSelector(allBooksSelectors.getCartBooksSelector);
+	const allBookArr = useSelector(allBooksSelectors.getAllBooksSelector);
 	const favoriteBook = favoritebookArr.find((item: IBook) => item.isbn13 === book?.isbn13);
 	const cartBook = cartbookArr.find((item: IBook) => item.isbn13 === book?.isbn13);
 
@@ -135,7 +139,25 @@ const SelectedBook = () => {
 						<FacebookIcon />
 						<MoreHorizOutlined />
 					</SocialContainer>
+				
 					<SubscribeInput />
+					
+					<SliderTitle>Similar Books</SliderTitle>
+					<MainSlider title='Similar Books'>
+				
+					{allBookArr.map((book) => (
+					<BookItem
+						title={book.title}
+						subtitle={book.subtitle}
+						isbn13={book.isbn13}
+						price={book.price}
+						image={book.image}
+						url={book.url}
+						key = {book.isbn13 + book.price}
+					/>
+				))}
+					</MainSlider>
+					
 				</SelectedBookContainer>
 			)}
 		</div>
