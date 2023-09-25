@@ -7,9 +7,20 @@ export const CartContainer = styled.div`
 `;
 
 export const BookContainer = styled.div`
+	display: relative;
 	display: flex;
 	flex-direction: column;
 	gap: 15px;
+`;
+
+export const ThanksPopUp = styled.div`
+	height: 150px;
+	width: 350px;
+	position: absolute;
+	top: calc(50% - 70px);
+	left: calc(50% - 170px);
+	border: 2px solid grey;
+	box-shadow: 12px 12px 2px 1px rgba(254, 233, 226, 1);
 `;
 
 export const Title = styled.h2`
@@ -78,4 +89,12 @@ export const StyledButton = styled.button`
 	&:hover {
 		background-color: grey;
 	}
+`;
+
+export const StyledP = styled.p`
+	display: flex;
+	justify-content: center;
+	font-size: 28px;
+	padding: 15px;
+	margin-bottom: 25px;
 `;

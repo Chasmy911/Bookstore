@@ -80,6 +80,11 @@ export const allBooksReducer = (
 				...state,
 				cartBooks: [ ...cartArr ]
 			};
+		case AllBooksTypes.CLEAR_CART:
+			return {
+				...state,
+				cartBooks: []
+			};
 		case AllBooksTypes.PLUS_AMOUNT_TO_CART:
 			return {
 				...state,

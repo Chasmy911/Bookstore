@@ -12,6 +12,7 @@ export const CartBookContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
 	gap: 30px;
+	width: 75%;
 `;
 
 export const StyledImg = styled.div`

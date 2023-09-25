@@ -37,17 +37,17 @@ const Header = () => {
 			<Search />
 
 			<StyledContainer>
-				<IconButton>
+				<IconButton onClick={deleteSelectedBook}>
 					<NavLink to="/favotite_book">
 						<FavoriteBorder color={favorite.length ? 'error' : 'action'} />
 					</NavLink>
 				</IconButton>
-				<IconButton>
+				<IconButton onClick={deleteSelectedBook}>
 					<NavLink to="/cart">
 						<ShoppingBagOutlined color={cartArr.length ? 'error' : 'action'} />
 					</NavLink>
 				</IconButton>
-				<IconButton>
+				<IconButton onClick={deleteSelectedBook}>
 					<NavLink to="/account">
 						<PersonOutlineOutlined color="action" />
 					</NavLink>

@@ -1,4 +1,4 @@
-import { BaseActionsWithPayload, IBook } from '../../types';
+import { BaseActions, BaseActionsWithPayload, IBook } from '../../types';
 
 export enum AllBooksTypes {
 	SET_BOOKS = 'SET_BOOKS',
@@ -7,6 +7,7 @@ export enum AllBooksTypes {
 	DELETE_FROM_FAVOURITE = 'DELETE_FROM_FAVOURITE',
 	ADD_BOOK_TO_CART = 'ADD_BOOK_TO_CART',
 	REMOVE_BOOK_FROM_CART = 'REMOVE_BOOK_FROM_CART',
+	CLEAR_CART = 'CLEAR_CART',
 	PLUS_AMOUNT_TO_CART = 'PLUS_AMOUNT_TO_CART',
 	MINUS_AMOUNT_TO_CART = 'MINUS_AMOUNT_TO_CART'
 }
@@ -18,6 +19,7 @@ interface IBooksAction {
 	deleteFromFavourite: (book: string) => BaseActionsWithPayload<AllBooksTypes, string>;
 	addBookToCart: (book: IBook) => BaseActionsWithPayload<AllBooksTypes, IBook>;
 	removeBookFromCart: (bookId: string) => BaseActionsWithPayload<AllBooksTypes, string>;
+	clearCart: () => BaseActions<AllBooksTypes>;
 	plusAmountToCart: (bookId: string) => BaseActionsWithPayload<AllBooksTypes, string>;
 	minusAmountToCart: (bookId: string) => BaseActionsWithPayload<AllBooksTypes, string>;
 }
@@ -40,6 +42,9 @@ export const allBooksActions: IBooksAction = {
 	},
 	removeBookFromCart: (bookId: string) => {
 		return { type: AllBooksTypes.REMOVE_BOOK_FROM_CART, payload: bookId };
+	},
+	clearCart: () => {
+		return { type: AllBooksTypes.CLEAR_CART };
 	},
 	plusAmountToCart: (bookId: string) => {
 		return { type: AllBooksTypes.PLUS_AMOUNT_TO_CART, payload: bookId };

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
 	BookContainer,
 	CartContainer,
@@ -6,6 +6,8 @@ import {
 	InfoName,
 	InfoValue,
 	StyledButton,
+	StyledP,
+	ThanksPopUp,
 	Title,
 	TotalDiv,
 	TotalWrapper
@@ -14,13 +16,17 @@ import { IBook } from '../../types';
 import { useSelector } from 'react-redux';
 import { allBooksSelectors } from '../../store/AllBooks/AllBooksSelector';
 import { NavLink } from 'react-router-dom';
-import { IconButton } from '@mui/material';
+import { Button, IconButton } from '@mui/material';
 import { KeyboardBackspace } from '@mui/icons-material';
 
 import CartBookItem from '../../client/components/CartBookItem/CartBookItem';
+import { useActions } from '../../store/hooks/useActions';
 
 const Cart = () => {
+	const [ thanksTab, setThanksTab ] = useState(false);
+
 	const cartArr = useSelector(allBooksSelectors.getCartBooksSelector);
+	const { clearCart } = useActions();
 
 	const getTotal = () => {
 		return cartArr.reduce(
@@ -41,8 +47,21 @@ const Cart = () => {
 	const vat = total * 0.2;
 	const totalSum = total + vat;
 
+	const handleBtnClick = () => {
+		clearCart();
+		setThanksTab((prevState) => {
+			return !prevState;
+		});
+	};
+
 	return (
 		<CartContainer>
+			{thanksTab && (
+				<ThanksPopUp>
+					<StyledP>Thanks for your order</StyledP>
+					<StyledButton onClick={handleBtnClick}>Close</StyledButton>
+				</ThanksPopUp>
+			)}
 			<NavLink to="/">
 				<IconButton>
 					<KeyboardBackspace />
@@ -76,7 +95,7 @@ const Cart = () => {
 							<div>TOTAL</div>
 							<div>$ {totalSum.toFixed(2)} </div>
 						</TotalDiv>
-						<StyledButton>Check out</StyledButton>
+						<StyledButton onClick={handleBtnClick}>Check out</StyledButton>
 					</TotalWrapper>
 				</BookContainer>
 			) : (
