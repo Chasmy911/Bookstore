@@ -129,3 +129,5 @@ export const SliderTitle = styled.div`
 	font-weight: 700;
 	line-height: 60px; /* 150% */
 `;
+
+export const StyledA = styled.a`color: black;`;

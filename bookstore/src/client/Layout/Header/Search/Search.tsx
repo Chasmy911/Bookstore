@@ -16,13 +16,14 @@ function debounce(func: any, delay: number) {
 
 const Search = () => {
 	const [ value, setValue ] = useState(null);
-	const { getAllBooks, getSearchBooks } = useActions();
+	const { getAllBooks, getSearchBooksAsync, setSearchValue } = useActions();
 
 	const handleChange = (event: any) => {
 		setValue(event.target.value);
 
 		if (!event.target.value) {
 			getAllBooks();
+			setSearchValue(value);
 		}
 	};
 
@@ -31,7 +32,8 @@ const Search = () => {
 	useEffect(
 		() => {
 			if (value) {
-				getSearchBooks(value);
+				getSearchBooksAsync(value, 1);
+				setSearchValue(value);
 			}
 		},
 		[ value ]

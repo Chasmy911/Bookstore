@@ -5,17 +5,29 @@ type defaultStateType = {
 	allBooks: IBook[];
 	cartBooks: IBook[];
 	favoriteBooks: IBook[];
+	searchBook: {
+		error: string;
+		total: string;
+		page: string;
+		books: IBook[];
+	};
 };
 
 const defaultState: defaultStateType = {
 	allBooks: [],
 	cartBooks: [],
-	favoriteBooks: []
+	favoriteBooks: [],
+	searchBook: {
+		error: '',
+		total: '',
+		page: '',
+		books: []
+	}
 };
 
 export const allBooksReducer = (
 	state = defaultState,
-	action: BaseActionsWithPayload<AllBooksTypes, IBook[] | IBook | string>
+	action: BaseActionsWithPayload<AllBooksTypes, any[] | any | string>
 ) => {
 	switch (action.type) {
 		case AllBooksTypes.SET_BOOKS:
@@ -26,6 +38,15 @@ export const allBooksReducer = (
 				};
 			}
 			return state;
+
+		case AllBooksTypes.SET_SEARCH_BOOKS:
+			return {
+				...state,
+				searchBook: {
+					...action.payload
+				}
+			};
+
 		case AllBooksTypes.ADD_TO_FAVOURITE:
 			return {
 				...state,

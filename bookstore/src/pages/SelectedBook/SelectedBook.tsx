@@ -15,6 +15,7 @@ import {
 	SelectedBookContainer,
 	SliderTitle,
 	SocialContainer,
+	StyledA,
 	StyledButtonCart,
 	StyledTab,
 	Title
@@ -135,9 +136,9 @@ const SelectedBook = () => {
 					</Box>
 
 					<SocialContainer>
-						<TwitterIcon />
-						<FacebookIcon />
-						<MoreHorizOutlined />
+					<StyledA href='https://twitter.com/?lang=ru' >	<TwitterIcon /></StyledA>
+					<StyledA href='https://ru-ru.facebook.com/' >	<FacebookIcon /></StyledA>
+					<StyledA href='https://www.youtube.com/?gl=BY&hl=ru' >	<MoreHorizOutlined /></StyledA>
 					</SocialContainer>
 				
 					<SubscribeInput />

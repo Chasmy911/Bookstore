@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BookContainer, FavoriteBookContainer, Title } from './styles';
+import { BookContainer, FavoriteBookContainer, SliderTitle, Title } from './styles';
 import { IBook } from '../../types';
 import FavoriteBookItem from '../../client/components/FavoriteBookItem/FavoriteBookItem';
 import { useSelector } from 'react-redux';
@@ -7,9 +7,12 @@ import { allBooksSelectors } from '../../store/AllBooks/AllBooksSelector';
 import { NavLink } from 'react-router-dom';
 import { IconButton } from '@mui/material';
 import { FavoriteBorder, KeyboardBackspace } from '@mui/icons-material';
+import MainSlider from '../../client/components/Slider/Slider';
+import BookItem from '../../client/components/BookItem/BookItem';
 
 const FavoriteBooks = () => {
 	const favoriteBooksArr = useSelector(allBooksSelectors.getAllFavoriteSelector);
+	const allBooks = useSelector(allBooksSelectors.getAllBooksSelector);
 
 	return (
 		<FavoriteBookContainer>
@@ -41,6 +44,21 @@ const FavoriteBooks = () => {
 					<FavoriteBorder color="action" fontSize="inherit" /> on the book page.
 				</p>
 			)}
+
+			<SliderTitle>Popular Books</SliderTitle>
+			<MainSlider title="Similar Books">
+				{allBooks.map((book) => (
+					<BookItem
+						title={book.title}
+						subtitle={book.subtitle}
+						isbn13={book.isbn13}
+						price={book.price}
+						image={book.image}
+						url={book.url}
+						key={book.isbn13 + book.price}
+					/>
+				))}
+			</MainSlider>
 		</FavoriteBookContainer>
 	);
 };

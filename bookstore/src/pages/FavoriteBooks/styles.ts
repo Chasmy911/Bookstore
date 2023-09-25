@@ -21,3 +21,13 @@ export const Title = styled.h2`
 	line-height: 64px;
 	padding: 10px 0 20px;
 `;
+
+export const SliderTitle = styled.div`
+	margin-top: 20px;
+	color: #313037;
+	font-family: Bebas Neue;
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 60px; /* 150% */
+`;

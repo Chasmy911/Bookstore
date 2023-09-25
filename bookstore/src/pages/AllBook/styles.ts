@@ -1,3 +1,4 @@
+import { Pagination } from '@mui/material';
 import styled from 'styled-components';
 
 export const AllBookContainer = styled.div`
@@ -24,3 +25,9 @@ export const Title = styled.h2`
 	line-height: 64px;
 	padding: 10px 0 20px;
 `;
+
+export const StyledPagination = styled(Pagination)`
+margin-top: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center`;
