@@ -2,29 +2,39 @@ import styled from 'styled-components';
 import { backgroundColor } from '../../helper';
 
 export const StyledItem = styled.div`
-	width: 350px;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
 	align-self: stretch;
-	flex-grow: 0;
+
+	& a {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+	}
 `;
 
 export const StyledImg = styled.div`
+	display: block;
 	width: 100%;
 	background-color: ${backgroundColor};
-	height: 280px;
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	@media (max-width: 950px) {
+		width: 90%;
+	}
 `;
-export const Image = styled.img`
-	display: block;
-	height: 250px;
-`;
+export const Image = styled.img`display: block;`;
 
 export const StyledTitle = styled.h2`
+	width: 90%;
 	color: #313037;
 	font-family: Bebas Neue;
 	text-transform: uppercase;
@@ -33,9 +43,18 @@ export const StyledTitle = styled.h2`
 	font-style: normal;
 	font-weight: 700;
 	line-height: 32px;
+
+	@media (max-width: 950px) {
+		font-size: 18px;
+	}
 `;
 
-export const StyledInfo = styled.div`width: 100%;`;
+export const StyledInfo = styled.div`
+	width: 100%;
+	@media (max-width: 950px) {
+		width: 90%;
+	}
+`;
 
 export const ArticleContainer = styled.div`
 	display: flex;
@@ -59,6 +78,13 @@ export const Price = styled.div`
 	font-style: normal;
 	font-weight: 700;
 	line-height: 32px;
+
+	@media (max-width: 950px) {
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 24px;
+	}
 `;
 
 export const PriceDiv = styled.div`color: black;`;

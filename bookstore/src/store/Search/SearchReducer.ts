@@ -1,4 +1,4 @@
-import { BaseActionsWithPayload, IBook } from '../../types';
+import { BaseActionsWithPayload } from '../../types';
 import { SearchTypes } from './SearchActions';
 
 type SearchType = {

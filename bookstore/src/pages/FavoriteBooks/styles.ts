@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const FavoriteBookContainer = styled.div`
 	max-width: 1120px;
 	margin: 0 auto;
-	padding: 100px 0;
+	padding: 100px 10px;
 `;
 
 export const BookContainer = styled.div`
@@ -20,6 +20,15 @@ export const Title = styled.h2`
 	font-weight: 700;
 	line-height: 64px;
 	padding: 10px 0 20px;
+
+	@media (max-width: 750px) {
+		font-size: 40px;
+		padding: 10px 0 10px;
+	}
+
+	@media (max-width: 600px) {
+		font-size: 34px;
+	}
 `;
 
 export const SliderTitle = styled.div`

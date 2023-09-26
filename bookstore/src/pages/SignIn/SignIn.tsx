@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { StyledButton, StyledForm, StyledInput, StyledLabel, StyledTab, StyledWrapper } from './styles';
+import { StyledTab, StyledWrapper } from './styles';
 import { Box, Tab } from '@mui/material';
 import { TabContext, TabList } from '@mui/lab';
-import { SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
-import { ILogInUserData, ISignUpUserData } from '../../types';
 import LoginForm from '../../client/components/LogInForm/LoginForm';
 import SignUpForm from '../../client/components/SignUpForm/SignUpForm';
 

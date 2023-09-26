@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const CartContainer = styled.div`
 	max-width: 1120px;
 	margin: 0 auto;
-	padding: 100px 0;
+	padding: 100px 10px;
 `;
 
 export const BookContainer = styled.div`
@@ -31,11 +31,27 @@ export const Title = styled.h2`
 	font-weight: 700;
 	line-height: 64px;
 	padding: 10px 0 20px;
+
+	@media (max-width: 750px) {
+		font-size: 40px;
+		padding: 10px 0 10px;
+	}
+
+	@media (max-width: 600px) {
+		font-size: 34px;
+	}
 `;
 
 export const TotalWrapper = styled.div`
 	width: 30%;
 	margin-left: auto;
+	border-top: 1px solid #d9d9d9;
+	padding-top: 10px;
+
+	@media (max-width: 600px) {
+		width: 100%;
+		margin-left: 0;
+	}
 `;
 
 export const Info = styled.div`
@@ -71,6 +87,11 @@ export const TotalDiv = styled.div`
 	font-style: normal;
 	font-weight: 700;
 	line-height: 60px;
+
+	@media (max-width: 750px) {
+		font-size: 26px;
+		line-height: 50px;
+	}
 `;
 
 export const StyledButton = styled.button`
@@ -97,4 +118,9 @@ export const StyledP = styled.p`
 	font-size: 28px;
 	padding: 15px;
 	margin-bottom: 25px;
+
+	@media (max-width: 650px) {
+		font-size: 24px;
+		line-height: 40px;
+	}
 `;

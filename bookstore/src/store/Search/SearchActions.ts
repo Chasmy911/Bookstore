@@ -1,4 +1,4 @@
-import { BaseActions, BaseActionsWithPayload, IBook } from '../../types';
+import { BaseActionsWithPayload } from '../../types';
 
 export enum SearchTypes {
 	SET_SEARCH_VALUE = 'SET_SEARCH_VALUE'

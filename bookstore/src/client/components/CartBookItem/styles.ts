@@ -13,6 +13,15 @@ export const CartBookContainer = styled.div`
 	justify-content: space-between;
 	gap: 30px;
 	width: 75%;
+
+	@media (max-width: 750px) {
+		width: 85%;
+	}
+
+	@media (max-width: 600px) {
+		flex-direction: column;
+		width: 100%;
+	}
 `;
 
 export const StyledImg = styled.div`
@@ -22,6 +31,10 @@ export const StyledImg = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	@media (max-width: 600px) {
+		margin: 0 auto;
+	}
 `;
 export const Image = styled.img`
 	display: block;
@@ -39,6 +52,11 @@ export const StyledTitle = styled.h2`
 	font-style: normal;
 	font-weight: 700;
 	line-height: 32px;
+
+	@media (max-width: 850px) {
+		font-size: 20px;
+		line-height: 28px;
+	}
 `;
 
 export const StyledInfo = styled.div`width: 100%;`;

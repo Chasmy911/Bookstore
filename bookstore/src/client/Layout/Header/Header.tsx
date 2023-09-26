@@ -1,14 +1,7 @@
 import React from 'react';
-import {
-	StyledContainer,
-	StyledHeader,
-	StyledIconButton,
-	StyledImgDiv,
-	StyledInput,
-	StyledInputContainer
-} from './styles';
+import { StyledContainer, StyledHeader, StyledImgDiv } from './styles';
 import { IconButton } from '@mui/material';
-import { FavoriteBorder, PersonOutlineOutlined, SearchOutlined, ShoppingBagOutlined } from '@mui/icons-material';
+import { FavoriteBorder, PersonOutlineOutlined, ShoppingBagOutlined } from '@mui/icons-material';
 //@ts-ignore
 import Bookstore from './Bookstore.svg';
 import { NavLink } from 'react-router-dom';
@@ -48,7 +41,7 @@ const Header = () => {
 					</NavLink>
 				</IconButton>
 				<IconButton onClick={deleteSelectedBook}>
-					<NavLink to="/account">
+					<NavLink to="/sign_in">
 						<PersonOutlineOutlined color="action" />
 					</NavLink>
 				</IconButton>

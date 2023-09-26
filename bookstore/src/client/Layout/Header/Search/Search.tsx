@@ -40,14 +40,12 @@ const Search = () => {
 	);
 
 	return (
-		<div>
-			<StyledInputContainer>
-				<StyledInput placeholder="Search" type="text" onChange={dedouncedOnChange} />
-				<StyledIconButton>
-					<SearchOutlined />
-				</StyledIconButton>
-			</StyledInputContainer>
-		</div>
+		<StyledInputContainer>
+			<StyledInput placeholder="Search" type="text" onChange={dedouncedOnChange} />
+			<StyledIconButton>
+				<SearchOutlined />
+			</StyledIconButton>
+		</StyledInputContainer>
 	);
 };
 

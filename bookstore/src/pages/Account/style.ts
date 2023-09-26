@@ -2,7 +2,7 @@ import { TabPanel } from '@mui/lab';
 
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`padding: 100px 0;`;
+export const Wrapper = styled.div`padding: 100px 10px;`;
 
 export const Title = styled.h2`
 	text-transform: uppercase;
@@ -12,6 +12,10 @@ export const Title = styled.h2`
 	font-style: normal;
 	font-weight: 700;
 	line-height: 64px;
+
+	@media (max-width: 850px) {
+		font-size: 30px;
+	}
 `;
 
 export const SybTitle = styled.h4`
@@ -22,6 +26,10 @@ export const SybTitle = styled.h4`
 	font-style: normal;
 	font-weight: 700;
 	line-height: 64px;
+
+	@media (max-width: 850px) {
+		font-size: 20px;
+	}
 `;
 
 export const StyledWrapper = styled.div`
@@ -58,22 +66,34 @@ export const StyledLabel = styled.label`
 	font-size: 14px;
 	font-weight: 700;
 	padding: 20px 20px 20px 20px;
+
+	@media (max-width: 750px) {
+		width: 100%;
+		margin-right: 3px;
+		padding: 10px;
+	}
 `;
 
 export const StyledInput = styled.input`
 	height: 40px;
-	width: 100%;
-	margin: 10px auto 0;
+	width: 98%;
+	margin: 3px 2px;
 	padding-left: 15px;
 
 	& ::-webkit-input-placeholder {
 		padding: 15px;
 		color: grey;
 	}
+
+	@media (max-width: 750px) {
+		margin: 2px;
+	}
 `;
 
 export const StyledButton = styled.button`
-	display: inline-block;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	margin: 10px auto 0;
 	width: 40%;
 	height: 40px;
@@ -88,10 +108,16 @@ export const StyledButton = styled.button`
 	&:hover {
 		background-color: grey;
 	}
+
+	@media (max-width: 850px) {
+		font-size: 16px;
+	}
 `;
 
 export const StyledWhiteButton = styled.button`
-	display: inline-block;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	margin: 10px auto 0;
 	width: 40%;
 	height: 40px;
@@ -106,11 +132,19 @@ export const StyledWhiteButton = styled.button`
 	&:hover {
 		background-color: grey;
 	}
+
+	@media (max-width: 850px) {
+		font-size: 16px;
+	}
 `;
 export const ProfileContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
+
+	@media (max-width: 750px) {
+		flex-direction: column;
+	}
 `;
 
 export const ButtonContainer = styled.div`
@@ -120,4 +154,8 @@ export const ButtonContainer = styled.div`
 	text-align: right;
 	margin-top: 40px;
 	margin-left: auto;
+
+	@media (max-width: 750px) {
+		width: 100%;
+	}
 `;

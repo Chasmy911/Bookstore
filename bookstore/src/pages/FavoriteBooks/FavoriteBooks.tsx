@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BookContainer, FavoriteBookContainer, SliderTitle, Title } from './styles';
 import { IBook } from '../../types';
 import FavoriteBookItem from '../../client/components/FavoriteBookItem/FavoriteBookItem';

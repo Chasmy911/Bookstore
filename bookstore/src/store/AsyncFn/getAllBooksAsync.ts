@@ -1,5 +1,4 @@
 import { Dispatch } from 'redux';
-import { IBook } from '../../types';
 import { allBooksActions } from '../AllBooks/AllBooksActions';
 import { BooksApi } from '../../client/api/booksApi';
 

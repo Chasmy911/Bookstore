@@ -1,5 +1,4 @@
 import { TabPanel } from '@mui/lab';
-import { Tab } from '@mui/material';
 import styled from 'styled-components';
 
 export const StyledWrapper = styled.div`
@@ -7,6 +6,14 @@ export const StyledWrapper = styled.div`
 	border: 2px solid black;
 	height: 50%;
 	margin: 200px auto;
+
+	@media (max-width: 700px) {
+		width: 70%;
+	}
+
+	@media (max-width: 600px) {
+		width: 85%;
+	}
 `;
 
 export const StyledTab = styled(TabPanel)`
@@ -48,23 +55,5 @@ export const StyledInput = styled.input`
 	& ::-webkit-input-placeholder {
 		padding: 15px;
 		color: grey;
-	}
-`;
-
-export const StyledButton = styled.button`
-	display: inline-block;
-	margin: 10px auto 0;
-	width: 90%;
-	height: 40px;
-	background-color: black;
-	color: white;
-	text-transform: uppercase;
-	font-family: Bebas Neue;
-	font-size: 20px;
-	font-style: normal;
-	padding: 5px 0;
-
-	&:hover {
-		background-color: grey;
 	}
 `;

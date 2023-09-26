@@ -5,7 +5,7 @@ import { TabPanel } from '@mui/lab';
 
 export const SelectedBookContainer = styled.div`
 	max-width: 1120px;
-	padding: 100px 0;
+	padding: 100px 10px;
 	background-color: white;
 	margin: 0 auto;
 `;
@@ -18,6 +18,20 @@ export const Title = styled.h2`
 	font-style: normal;
 	font-weight: 700;
 	line-height: 64px;
+
+	@media (max-width: 900px) {
+		font-size: 40px;
+		line-height: 58px;
+	}
+	@media (max-width: 800px) {
+		font-size: 30px;
+		line-height: 50px;
+	}
+
+	@media (max-width: 600px) {
+		font-size: 24px;
+		line-height: 36px;
+	}
 `;
 
 export const BookInfoContainer = styled.div`
@@ -25,6 +39,10 @@ export const BookInfoContainer = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 20px;
+
+	@media (max-width: 600px) {
+		flex-direction: column;
+	}
 `;
 
 export const ImgContainer = styled.div`
@@ -33,6 +51,10 @@ export const ImgContainer = styled.div`
 	background-color: ${backgroundColor};
 	text-align: center;
 	align-items: center;
+
+	@media (max-width: 600px) {
+		width: 100%;
+	}
 `;
 
 export const FavoriteRoundedContainer = styled(FavoriteOutlined)`
@@ -50,6 +72,10 @@ export const InfoContainer = styled.div`
 	justify-content: space-between;
 	flex-direction: column;
 	width: 35%;
+
+	@media (max-width: 600px) {
+		width: 100%;
+	}
 `;
 
 export const Info = styled.div`
@@ -83,6 +109,10 @@ export const Price = styled.div`
 	font-style: normal;
 	font-weight: 700;
 	line-height: 60px;
+
+	@media (max-width: 900px) {
+		font-size: 30px;
+	}
 `;
 
 export const StyledTab = styled(TabPanel)`
@@ -92,6 +122,10 @@ export const StyledTab = styled(TabPanel)`
 	font-style: normal;
 	font-weight: 400;
 	line-height: 32px;
+
+	@media (max-width: 380px) {
+		font-size: 14px;
+	}
 `;
 
 export const SocialContainer = styled.div`
@@ -118,6 +152,10 @@ export const StyledButtonCart = styled.button`
 	&:hover {
 		background: #5b5a62;
 	}
+
+	@media (max-width: 700px) {
+		font-size: 14px;
+	}
 `;
 
 export const SliderTitle = styled.div`
@@ -127,7 +165,7 @@ export const SliderTitle = styled.div`
 	font-size: 40px;
 	font-style: normal;
 	font-weight: 700;
-	line-height: 60px; /* 150% */
+	line-height: 60px;
 `;
 
 export const StyledA = styled.a`color: black;`;

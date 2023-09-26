@@ -21,7 +21,7 @@ import {
 	Title
 } from './style';
 import Rating from '../../client/components/Rating/Rating';
-import { TabContext, TabList, TabPanel } from '@mui/lab';
+import { TabContext, TabList } from '@mui/lab';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import SubscribeInput from '../../client/components/SubscribeInput/SubscribeInput';
@@ -173,15 +173,15 @@ const SelectedBook = () => {
 
 					<SocialContainer>
 						<StyledA href="https://twitter.com/?lang=ru">
-							{' '}
+							
 							<TwitterIcon />
 						</StyledA>
 						<StyledA href="https://ru-ru.facebook.com/">
-							{' '}
+							
 							<FacebookIcon />
 						</StyledA>
 						<StyledA href="https://www.youtube.com/?gl=BY&hl=ru">
-							{' '}
+							
 							<MoreHorizOutlined />
 						</StyledA>
 					</SocialContainer>

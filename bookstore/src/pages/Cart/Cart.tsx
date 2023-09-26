@@ -16,7 +16,7 @@ import { IBook } from '../../types';
 import { useSelector } from 'react-redux';
 import { allBooksSelectors } from '../../store/AllBooks/AllBooksSelector';
 import { NavLink } from 'react-router-dom';
-import { Button, IconButton } from '@mui/material';
+import { IconButton } from '@mui/material';
 import { KeyboardBackspace } from '@mui/icons-material';
 
 import CartBookItem from '../../client/components/CartBookItem/CartBookItem';
@@ -93,7 +93,7 @@ const Cart = () => {
 						</Info>
 						<TotalDiv>
 							<div>TOTAL</div>
-							<div>$ {totalSum.toFixed(2)} </div>
+							<div>${totalSum.toFixed(2)} </div>
 						</TotalDiv>
 						<StyledButton onClick={handleBtnClick}>Check out</StyledButton>
 					</TotalWrapper>

@@ -3,7 +3,6 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { ArrowBackStyled, ArrowForwardStyled, SliderWrapper } from './styles';
-import { ArrowBack, ArrowForward } from '@mui/icons-material';
 
 const MainSlider = ({ children }: any) => {
 	function SampleNextArrow(props: any) {
