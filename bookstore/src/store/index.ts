@@ -5,12 +5,14 @@ import thunk from 'redux-thunk';
 import { secectedBookReducer } from './Book/BookReducer';
 import { themeReducer } from './Theme/ThemeReducer';
 import { searchReducer } from './Search/SearchReducer';
+import { userInfoReducer } from './SignUpData/SignUpReducer';
 
 const rootReducers = combineReducers({
 	allBooks: allBooksReducer,
 	selectedBook: secectedBookReducer,
 	theme: themeReducer,
-	searchValue: searchReducer
+	searchValue: searchReducer,
+	signUpData: userInfoReducer
 });
 
 export const store = createStore(rootReducers, composeWithDevTools(applyMiddleware(thunk)));

@@ -7,6 +7,7 @@ import { getSelectedBookAsync } from '../AsyncFn/getBookByIdAsync';
 import { toggleThemeAction } from '../Theme/ThemeActions';
 import { searchAction } from '../Search/SearchActions';
 import { getSearchBooksAsync } from '../AsyncFn/getSearchBookAsynk';
+import { signUpActions } from '../SignUpData/SignUpActions';
 
 export const useActions = () => {
 	const dispatch = useDispatch();
@@ -14,11 +15,12 @@ export const useActions = () => {
 		{
 			...selectedBookAction,
 			...allBooksActions,
+			...searchAction,
+			...signUpActions,
 			...toggleThemeAction,
 			getAllBooks,
 			getSelectedBookAsync,
-			getSearchBooksAsync,
-			...searchAction
+			getSearchBooksAsync
 		},
 		dispatch
 	);

@@ -4,6 +4,7 @@ import FavoriteBooks from '../../pages/FavoriteBooks/FavoriteBooks';
 import Cart from '../../pages/Cart/Cart';
 import SignIn from '../../pages/SignIn/SignIn';
 import Account from '../../pages/Account/Account';
+import SignUpSuccess from '../../pages/SignUpSuccess/SignUpSuccess';
 
 type UserRoutes = {
 	id: number;
@@ -54,5 +55,18 @@ export const userRoutes: UserRoutes[] = [
 		Component: Account,
 		title: 'Account',
 		strict: true
+	},
+	{
+		id: 6,
+		path: '/sign-up/success',
+		Component: SignUpSuccess,
+		title: 'Sign Up Successs',
+		strict: true
+	},
+	{
+		id: 7,
+		path: '/activate/:uid/:token',
+		Component: SignUpSuccess,
+		title: 'Succeessfully activation'
 	}
 ];

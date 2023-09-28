@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StyledButton, StyledForm, StyledInput, StyledLabel } from './styles';
 import { SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
 import { ISignUpUserData } from '../../../types';
+import { UserApi } from '../../api/logInUserApi';
+import { useTypedSelector } from '../../../store/hooks/useTypedSelector';
+import { useNavigate } from 'react-router-dom';
+import { useActions } from '../../../store/hooks/useActions';
 
 const SignUpForm = () => {
 	const { register, handleSubmit, formState, formState: { errors, isSubmitSuccessful }, reset } = useForm<
@@ -23,19 +27,24 @@ const SignUpForm = () => {
 		},
 		[ formState, reset ]
 	);
+	const { getSignUpData } = useActions();
 
 	const submit: SubmitHandler<ISignUpUserData> = (data) => {
-		console.log(data);
+		UserApi.signUpUser(data);
+		getSignUpData(data);
 	};
 
-	// useEffect(
-	// 	() => {
-	// 		if (isSignUpSuccessful && signUpDate) {
-	// 			navigate('/sign-up/success');
-	// 		}
-	// 	},
-	// 	[ isSignUpSuccessful, signUpDate ]
-	// );
+	const { isSignUpSuccessful, SignUpData } = useTypedSelector((state) => state.signUpData);
+	const navigate = useNavigate();
+
+	useEffect(
+		() => {
+			if (isSignUpSuccessful && SignUpData) {
+				navigate('/sign-up/success');
+			}
+		},
+		[ isSignUpSuccessful, SignUpData ]
+	);
 
 	const error: SubmitErrorHandler<ISignUpUserData> = (data) => {
 		console.log(data);

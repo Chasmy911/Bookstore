@@ -16,12 +16,16 @@ import {
 import { NavLink } from 'react-router-dom';
 import { IconButton } from '@mui/material';
 import { KeyboardBackspace } from '@mui/icons-material';
+import { useTypedSelector } from '../../store/hooks/useTypedSelector';
 
 const Account = () => {
 	const { register, handleSubmit, formState, formState: { errors, isSubmitSuccessful }, reset } = useForm<
 		IAccountData
 	>({
-		defaultValues: {}
+		defaultValues: {
+			name: 'userInfo?.username',
+			email: 'userInfo?.email'
+		}
 	});
 
 	React.useEffect(
