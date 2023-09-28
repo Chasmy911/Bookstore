@@ -95,7 +95,7 @@ export const StyledButton = styled.button`
 	justify-content: center;
 	align-items: center;
 	margin: 10px auto 0;
-	width: 40%;
+	width: 30%;
 	height: 40px;
 	background-color: black;
 	color: white;
@@ -104,6 +104,10 @@ export const StyledButton = styled.button`
 	font-size: 20px;
 	font-style: normal;
 	padding: 5px 0;
+
+	& a {
+		color: white;
+	}
 
 	&:hover {
 		background-color: grey;
@@ -119,7 +123,7 @@ export const StyledWhiteButton = styled.button`
 	justify-content: center;
 	align-items: center;
 	margin: 10px auto 0;
-	width: 40%;
+	width: 30%;
 	height: 40px;
 	background-color: white;
 	color: black;
@@ -128,6 +132,10 @@ export const StyledWhiteButton = styled.button`
 	font-size: 20px;
 	font-style: normal;
 	padding: 5px 0;
+
+	& a {
+		color: black;
+	}
 
 	&:hover {
 		background-color: grey;
@@ -149,7 +157,7 @@ export const ProfileContainer = styled.div`
 
 export const ButtonContainer = styled.div`
 	display: flex;
-	width: 50%;
+	width: 60%;
 	justify-content: space-between;
 	text-align: right;
 	margin-top: 40px;

@@ -9,11 +9,14 @@ import { useSelector } from 'react-redux';
 import { allBooksSelectors } from '../../../store/AllBooks/AllBooksSelector';
 import { useActions } from '../../../store/hooks/useActions';
 import Search from './Search/Search';
+import { useTypedSelector } from '../../../store/hooks/useTypedSelector';
 
 const Header = () => {
 	const favorite = useSelector(allBooksSelectors.getAllFavoriteSelector);
 	const cartArr = useSelector(allBooksSelectors.getCartBooksSelector);
 	const { clearSelectedBook } = useActions();
+
+	const isLoggedIn = useTypedSelector((state) => state.userInfo.isLoggedIn);
 
 	const deleteSelectedBook = () => {
 		clearSelectedBook();
@@ -41,9 +44,15 @@ const Header = () => {
 					</NavLink>
 				</IconButton>
 				<IconButton onClick={deleteSelectedBook}>
-					<NavLink to="/sign_in">
-						<PersonOutlineOutlined color="action" />
-					</NavLink>
+					{isLoggedIn ? (
+						<NavLink to="/account">
+							<PersonOutlineOutlined color="error" />
+						</NavLink>
+					) : (
+						<NavLink to="/sign_in">
+							<PersonOutlineOutlined color="action" />
+						</NavLink>
+					)}
 				</IconButton>
 			</StyledContainer>
 		</StyledHeader>

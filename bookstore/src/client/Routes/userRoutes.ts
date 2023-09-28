@@ -46,7 +46,7 @@ export const userRoutes: UserRoutes[] = [
 		path: '/sign_in',
 		Component: SignIn,
 		title: 'Sign In',
-		strict: true
+		strict: false
 	},
 
 	{

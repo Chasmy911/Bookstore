@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ILogInUserData } from '../../../types';
 import { SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
 import { StyledButton, StyledForm, StyledInput, StyledLabel } from './styles';
+import { useActions } from '../../../store/hooks/useActions';
+import { useSelector } from 'react-redux';
+import { useTypedSelector } from '../../../store/hooks/useTypedSelector';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
 	const { register, handleSubmit, formState, formState: { errors, isSubmitSuccessful }, reset } = useForm<
@@ -22,13 +26,27 @@ const LoginForm = () => {
 		[ formState, reset ]
 	);
 
+	const { getLogInUserAsync } = useActions();
+
 	const submit: SubmitHandler<ILogInUserData> = (data) => {
-		console.log(data);
+		getLogInUserAsync(data);
 	};
 
 	const error: SubmitErrorHandler<ILogInUserData> = (data) => {
 		console.log(data);
 	};
+
+	const isLoggedIn = useTypedSelector((state) => state.userInfo.isLoggedIn);
+	const navigate = useNavigate();
+
+	useEffect(
+		() => {
+			if (isLoggedIn) {
+				navigate('/');
+			}
+		},
+		[ isLoggedIn ]
+	);
 
 	return (
 		<StyledForm onSubmit={handleSubmit(submit, error)}>

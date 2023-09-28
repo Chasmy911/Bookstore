@@ -18,13 +18,19 @@ import { IconButton } from '@mui/material';
 import { KeyboardBackspace } from '@mui/icons-material';
 import { useTypedSelector } from '../../store/hooks/useTypedSelector';
 
+import { logInActions } from '../../store/LogIn/LogInActions';
+import { useDispatch } from 'react-redux';
+import { signUpActions } from '../../store/SignUpData/SignUpActions';
+
 const Account = () => {
+	const user = useTypedSelector((state) => state.userInfo.userInfo);
+
 	const { register, handleSubmit, formState, formState: { errors, isSubmitSuccessful }, reset } = useForm<
 		IAccountData
 	>({
 		defaultValues: {
-			name: 'userInfo?.username',
-			email: 'userInfo?.email'
+			name: user!.username,
+			email: user!.email
 		}
 	});
 
@@ -49,6 +55,11 @@ const Account = () => {
 
 	const error: SubmitErrorHandler<IAccountData> = (data) => {
 		console.log(data);
+	};
+	const dispatch = useDispatch();
+	const handleLogOut = () => {
+		dispatch(signUpActions.clearSignUpData());
+		dispatch(logInActions.logOutUser());
 	};
 
 	return (
@@ -113,8 +124,14 @@ const Account = () => {
 					</StyledLabel>
 				</ProfileContainer>
 				<ButtonContainer>
+					<StyledButton type="submit" onClick={handleLogOut}>
+						<NavLink to="/"> Log out</NavLink>
+					</StyledButton>
 					<StyledButton type="submit">Save changes</StyledButton>
-					<StyledWhiteButton type="submit">Cancel</StyledWhiteButton>
+
+					<StyledWhiteButton type="submit">
+						<NavLink to="/">Cancel</NavLink>
+					</StyledWhiteButton>
 				</ButtonContainer>
 			</StyledForm>
 		</Wrapper>

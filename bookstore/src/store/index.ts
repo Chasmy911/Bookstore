@@ -6,13 +6,15 @@ import { secectedBookReducer } from './Book/BookReducer';
 import { themeReducer } from './Theme/ThemeReducer';
 import { searchReducer } from './Search/SearchReducer';
 import { userInfoReducer } from './SignUpData/SignUpReducer';
+import { logInReducer } from './LogIn/LogInReducer';
 
 const rootReducers = combineReducers({
 	allBooks: allBooksReducer,
 	selectedBook: secectedBookReducer,
 	theme: themeReducer,
 	searchValue: searchReducer,
-	signUpData: userInfoReducer
+	signUpData: userInfoReducer,
+	userInfo: logInReducer
 });
 
 export const store = createStore(rootReducers, composeWithDevTools(applyMiddleware(thunk)));

@@ -8,6 +8,8 @@ import { toggleThemeAction } from '../Theme/ThemeActions';
 import { searchAction } from '../Search/SearchActions';
 import { getSearchBooksAsync } from '../AsyncFn/getSearchBookAsynk';
 import { signUpActions } from '../SignUpData/SignUpActions';
+import { getLogInUserAsync } from '../AsyncFn/getLogInUserAsync';
+import { getNewTokensAsync } from '../AsyncFn/getNewTokensAsync';
 
 export const useActions = () => {
 	const dispatch = useDispatch();
@@ -20,7 +22,9 @@ export const useActions = () => {
 			...toggleThemeAction,
 			getAllBooks,
 			getSelectedBookAsync,
-			getSearchBooksAsync
+			getSearchBooksAsync,
+			getLogInUserAsync,
+			getNewTokensAsync
 		},
 		dispatch
 	);

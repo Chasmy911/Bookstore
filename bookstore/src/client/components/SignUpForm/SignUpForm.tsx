@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { StyledButton, StyledForm, StyledInput, StyledLabel } from './styles';
 import { SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
 import { ISignUpUserData } from '../../../types';
-import { UserApi } from '../../api/logInUserApi';
+import { UserApi } from '../../api/userApi';
 import { useTypedSelector } from '../../../store/hooks/useTypedSelector';
 import { useNavigate } from 'react-router-dom';
 import { useActions } from '../../../store/hooks/useActions';

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { SignUpWrapper, StyledButton,  StyledStr, Title, TitleWrapper } from './styles';
 import { NavLink, useParams } from 'react-router-dom';
 import { useTypedSelector } from '../../store/hooks/useTypedSelector';
-import { UserApi } from '../../client/api/logInUserApi';
+import { UserApi } from '../../client/api/userApi';
 
 enum ActivationStatus {
 	SUCCESS = 204
