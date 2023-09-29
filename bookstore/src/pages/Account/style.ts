@@ -66,6 +66,7 @@ export const StyledLabel = styled.label`
 	font-size: 14px;
 	font-weight: 700;
 	padding: 20px 20px 20px 20px;
+	margin-bottom: 2px;
 
 	@media (max-width: 750px) {
 		width: 100%;
@@ -75,9 +76,9 @@ export const StyledLabel = styled.label`
 `;
 
 export const StyledInput = styled.input`
-	height: 40px;
+	height: 36px;
 	width: 98%;
-	margin: 3px 2px;
+	margin: 1px 2px;
 	padding-left: 15px;
 
 	& ::-webkit-input-placeholder {
@@ -86,7 +87,7 @@ export const StyledInput = styled.input`
 	}
 
 	@media (max-width: 750px) {
-		margin: 2px;
+		margin: 3px;
 	}
 `;
 

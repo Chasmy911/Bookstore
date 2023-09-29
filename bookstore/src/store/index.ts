@@ -7,6 +7,7 @@ import { themeReducer } from './Theme/ThemeReducer';
 import { searchReducer } from './Search/SearchReducer';
 import { userInfoReducer } from './SignUpData/SignUpReducer';
 import { logInReducer } from './LogIn/LogInReducer';
+import { burgerReducer } from './Burger/BurgerReducer';
 
 const rootReducers = combineReducers({
 	allBooks: allBooksReducer,
@@ -14,7 +15,8 @@ const rootReducers = combineReducers({
 	theme: themeReducer,
 	searchValue: searchReducer,
 	signUpData: userInfoReducer,
-	userInfo: logInReducer
+	userInfo: logInReducer,
+	isBurgerOpened: burgerReducer
 });
 
 export const store = createStore(rootReducers, composeWithDevTools(applyMiddleware(thunk)));

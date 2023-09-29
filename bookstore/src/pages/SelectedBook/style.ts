@@ -5,7 +5,7 @@ import { TabPanel } from '@mui/lab';
 
 export const SelectedBookContainer = styled.div`
 	max-width: 1120px;
-	padding: 100px 10px;
+	padding: 100px 30px;
 	background-color: white;
 	margin: 0 auto;
 `;

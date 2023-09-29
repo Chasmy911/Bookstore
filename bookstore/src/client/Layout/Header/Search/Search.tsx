@@ -1,7 +1,8 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { StyledIconButton, StyledInput, StyledInputContainer } from '../styles';
+
 import { SearchOutlined } from '@mui/icons-material';
 import { useActions } from '../../../../store/hooks/useActions';
+import { StyledIconButton, StyledInput, StyledInputContainer } from './style';
 
 function debounce(func: any, delay: number) {
 	let timeout: any;

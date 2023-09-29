@@ -17,7 +17,6 @@ import { NavLink } from 'react-router-dom';
 import { IconButton } from '@mui/material';
 import { KeyboardBackspace } from '@mui/icons-material';
 import { useTypedSelector } from '../../store/hooks/useTypedSelector';
-
 import { logInActions } from '../../store/LogIn/LogInActions';
 import { useDispatch } from 'react-redux';
 import { signUpActions } from '../../store/SignUpData/SignUpActions';
@@ -127,7 +126,9 @@ const Account = () => {
 					<StyledButton type="submit" onClick={handleLogOut}>
 						<NavLink to="/"> Log out</NavLink>
 					</StyledButton>
-					<StyledButton type="submit">Save changes</StyledButton>
+					<StyledButton type="submit" onClick={() => submit}>
+						Reset Password
+					</StyledButton>
 
 					<StyledWhiteButton type="submit">
 						<NavLink to="/">Cancel</NavLink>

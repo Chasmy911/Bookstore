@@ -34,7 +34,24 @@ const MainSlider = ({ children }: any) => {
 		slidesToScroll: 1,
 		autoplay: true,
 		nextArrow: <SampleNextArrow />,
-		prevArrow: <SamplePrevArrow />
+		prevArrow: <SamplePrevArrow />,
+
+		responsive: [
+			{
+				breakpoint: 810,
+				settings: {
+					slidesToScroll: 1,
+					slidesToShow: 2
+				}
+			},
+			{
+				breakpoint: 769,
+				settings: {
+					slidesToScroll: 1,
+					slidesToShow: 1
+				}
+			}
+		]
 	};
 	return (
 		<SliderWrapper>

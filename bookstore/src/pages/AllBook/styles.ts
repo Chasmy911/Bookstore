@@ -9,14 +9,12 @@ export const AllBookContainer = styled.div`
 
 export const BookContainer = styled.div`
 	width: 100%;
-
 	display: grid;
 	grid-template-columns: repeat(3, minmax(100px, 350px));
+
 	grid-column-gap: 18px;
 	grid-row-gap: 20px;
 	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
 
 	@media (max-width: 900px) {
 		grid-template-columns: repeat(2, 1fr);

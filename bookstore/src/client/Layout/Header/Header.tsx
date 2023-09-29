@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledContainer, StyledHeader, StyledImgDiv } from './styles';
+import { OverLay, STyledSearch, StyledContainer, StyledHeader, StyledIconButtonBurger, StyledImgDiv } from './styles';
 import { IconButton } from '@mui/material';
 import { FavoriteBorder, PersonOutlineOutlined, ShoppingBagOutlined } from '@mui/icons-material';
 //@ts-ignore
@@ -10,27 +10,35 @@ import { allBooksSelectors } from '../../../store/AllBooks/AllBooksSelector';
 import { useActions } from '../../../store/hooks/useActions';
 import Search from './Search/Search';
 import { useTypedSelector } from '../../../store/hooks/useTypedSelector';
+import BurgerMenu from './BurgerMenu/BurgerMenu';
 
 const Header = () => {
 	const favorite = useSelector(allBooksSelectors.getAllFavoriteSelector);
 	const cartArr = useSelector(allBooksSelectors.getCartBooksSelector);
-	const { clearSelectedBook } = useActions();
+	const { clearSelectedBook, closeBurger } = useActions();
 
 	const isLoggedIn = useTypedSelector((state) => state.userInfo.isLoggedIn);
 
 	const deleteSelectedBook = () => {
 		clearSelectedBook();
 	};
+	const openBurger = useTypedSelector((state) => state.isBurgerOpened.isBurgerOpened);
+
+	const closeBurgerMenu = () => {
+		closeBurger();
+	};
 
 	return (
 		<StyledHeader>
+			{openBurger && <OverLay onClick={closeBurgerMenu} />}
 			<StyledImgDiv onClick={deleteSelectedBook}>
 				<NavLink to="/">
 					<img src={Bookstore} />
 				</NavLink>
 			</StyledImgDiv>
-
-			<Search />
+			<STyledSearch>
+				<Search />
+			</STyledSearch>
 
 			<StyledContainer>
 				<IconButton onClick={deleteSelectedBook}>
@@ -43,6 +51,7 @@ const Header = () => {
 						<ShoppingBagOutlined color={cartArr.length ? 'error' : 'action'} />
 					</NavLink>
 				</IconButton>
+
 				<IconButton onClick={deleteSelectedBook}>
 					{isLoggedIn ? (
 						<NavLink to="/account">
@@ -54,6 +63,9 @@ const Header = () => {
 						</NavLink>
 					)}
 				</IconButton>
+				<StyledIconButtonBurger>
+					<BurgerMenu />
+				</StyledIconButtonBurger>
 			</StyledContainer>
 		</StyledHeader>
 	);

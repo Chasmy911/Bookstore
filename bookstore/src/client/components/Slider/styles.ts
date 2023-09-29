@@ -9,7 +9,7 @@ export const ArrowForwardStyled = styled(ArrowForward)`
     line-height: 0;
     right: -25px;
     position: absolute;
-    top: 50%;
+    top: 28%;
     display: block;
     width: 20px;
     height: 20px;
@@ -27,9 +27,9 @@ export const ArrowBackStyled = styled(ArrowBack)`
 
     font-size: 0;
     line-height: 0;
-    left: -35px;
+    left: -25px;
     position: absolute;
-    top: 50%;
+    top: 30%;
     display: block;
     width: 20px;
     height: 20px;

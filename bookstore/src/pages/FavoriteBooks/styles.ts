@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const FavoriteBookContainer = styled.div`
 	max-width: 1120px;
 	margin: 0 auto;
-	padding: 100px 10px;
+	padding: 100px 30px;
 `;
 
 export const BookContainer = styled.div`

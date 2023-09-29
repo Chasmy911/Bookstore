@@ -10,6 +10,7 @@ import { getSearchBooksAsync } from '../AsyncFn/getSearchBookAsynk';
 import { signUpActions } from '../SignUpData/SignUpActions';
 import { getLogInUserAsync } from '../AsyncFn/getLogInUserAsync';
 import { getNewTokensAsync } from '../AsyncFn/getNewTokensAsync';
+import { burgerActions } from '../Burger/BurgerActions';
 
 export const useActions = () => {
 	const dispatch = useDispatch();
@@ -19,6 +20,7 @@ export const useActions = () => {
 			...allBooksActions,
 			...searchAction,
 			...signUpActions,
+			...burgerActions,
 			...toggleThemeAction,
 			getAllBooks,
 			getSelectedBookAsync,

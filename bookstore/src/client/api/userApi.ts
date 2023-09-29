@@ -1,4 +1,4 @@
-import { ILogInUserData, ISignUpUserData } from '../../types';
+import { IAccountData, ILogInUserData, ISignUpUserData } from '../../types';
 import { user } from '../utils/http';
 
 export const UserApi = {
@@ -6,6 +6,14 @@ export const UserApi = {
 	activateUserAccount: (uid: string, token: string) =>
 		user.post('/auth/users/activation/', { uid: uid, token: token }),
 	loginUser: ({ email, password }: ILogInUserData) => user.post('/auth/jwt/create/', { email, password }),
+	resetPassword: (newPassword: string, password: string, token: string) =>
+		user.post('/auth/users/set_password/', {
+			headers: {
+				Authorization: `Bearer ${token}`
+			},
+			new_password: newPassword,
+			current_password: password
+		}),
 	fetchUserInfo: (token: string) =>
 		user.get('/auth/users/me/', {
 			headers: {
