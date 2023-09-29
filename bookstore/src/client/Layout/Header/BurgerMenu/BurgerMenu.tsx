@@ -59,10 +59,10 @@ const BurgerMenu: FC<IBurgerProps> = () => {
 
 						{isLoggedIn && (
 							<div>
-								<StyledLi>
+								<StyledLi onClick={closeBurgerMenu}>
 									<NavLink to={'/favotite_book'}> Favorits</NavLink>
 								</StyledLi>
-								<StyledLi>
+								<StyledLi onClick={closeBurgerMenu}>
 									<NavLink to={'/cart'}> Cart</NavLink>
 								</StyledLi>
 							</div>

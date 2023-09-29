@@ -1,5 +1,13 @@
 import React from 'react';
-import { OverLay, STyledSearch, StyledContainer, StyledHeader, StyledIconButtonBurger, StyledImgDiv } from './styles';
+import {
+	HideIcon,
+	OverLay,
+	STyledSearch,
+	StyledContainer,
+	StyledHeader,
+	StyledIconButtonBurger,
+	StyledImgDiv
+} from './styles';
 import { IconButton } from '@mui/material';
 import { FavoriteBorder, PersonOutlineOutlined, ShoppingBagOutlined } from '@mui/icons-material';
 //@ts-ignore
@@ -41,16 +49,20 @@ const Header = () => {
 			</STyledSearch>
 
 			<StyledContainer>
-				<IconButton onClick={deleteSelectedBook}>
-					<NavLink to="/favotite_book">
-						<FavoriteBorder color={favorite.length ? 'error' : 'action'} />
-					</NavLink>
-				</IconButton>
-				<IconButton onClick={deleteSelectedBook}>
-					<NavLink to="/cart">
-						<ShoppingBagOutlined color={cartArr.length ? 'error' : 'action'} />
-					</NavLink>
-				</IconButton>
+				<HideIcon>
+					<IconButton onClick={deleteSelectedBook}>
+						<NavLink to="/favotite_book">
+							<FavoriteBorder color={favorite.length ? 'error' : 'action'} />
+						</NavLink>
+					</IconButton>
+				</HideIcon>
+				<HideIcon>
+					<IconButton onClick={deleteSelectedBook}>
+						<NavLink to="/cart">
+							<ShoppingBagOutlined color={cartArr.length ? 'error' : 'action'} />
+						</NavLink>
+					</IconButton>
+				</HideIcon>
 
 				<IconButton onClick={deleteSelectedBook}>
 					{isLoggedIn ? (

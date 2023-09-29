@@ -27,6 +27,10 @@ export const StyledModal = styled.div`
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
+
+	@media (max-width: 450px) {
+		width: 100%;
+	}
 `;
 
 export const StyledList = styled.ul`

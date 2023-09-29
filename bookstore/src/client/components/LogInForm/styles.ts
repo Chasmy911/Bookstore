@@ -51,6 +51,7 @@ export const StyledInput = styled.input`
 	width: 100%;
 	margin: 0 auto;
 	padding-left: 15px;
+	border: 1px solid black;
 
 	& ::-webkit-input-placeholder {
 		padding: 15px;

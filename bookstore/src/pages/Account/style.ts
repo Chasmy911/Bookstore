@@ -80,6 +80,7 @@ export const StyledInput = styled.input`
 	width: 98%;
 	margin: 1px 2px;
 	padding-left: 15px;
+	border: 1px solid black;
 
 	& ::-webkit-input-placeholder {
 		padding: 15px;

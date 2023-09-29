@@ -22,6 +22,10 @@ export const StyledContainer = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	width: 150px;
+
+	@media (max-width: 800px) {
+		justify-content: right;
+	}
 `;
 
 export const StyledInputContainer = styled.div`
@@ -30,6 +34,7 @@ export const StyledInputContainer = styled.div`
 	align-items: center;
 	width: 550px;
 	position: relative;
+	border: 1px solid black;
 
 	@media (max-width: 950px) {
 		width: 450px;
@@ -47,7 +52,6 @@ display: none;
 export const StyledInput = styled.input`
 	width: 100%;
 	padding: 10px;
-	border: 1px solid #d9d9d9;
 `;
 
 export const StyledIconButton = styled(IconButton)`
@@ -60,10 +64,15 @@ export const StyledImgDiv = styled.div`
 	align-items: center;
 	justify-content: center;
 	width: 30%;
+
+	@media (max-width: 800px) {
+		height: 100px;
+	}
 `;
 
-export const STyledSearch = styled(Search)`
+export const STyledSearch = styled.div`
 	display: block;
+	width: 80%;
 	@media (max-width: 800px) {
 		display: none;
 	}
@@ -78,4 +87,12 @@ export const OverLay = styled.div`
 	z-index: 998;
 	background: rgba(49, 48, 55, 0.50);
 	overflow: hidden;
+`;
+
+export const HideIcon = styled.span`
+	display: block;
+
+	@media (max-width: 800px) {
+		display: none;
+	}
 `;
