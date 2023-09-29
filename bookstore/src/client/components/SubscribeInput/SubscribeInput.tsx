@@ -7,7 +7,7 @@ const SubscribeInput = () => {
 			<Form>
 				<Title>Subscribe to Newsletter</Title>
 				<InputContainer>
-					<StyledInput placeholder="Your email" />
+					<StyledInput placeholder="Your email" type="email" />
 					<StyledButton>Subscribe</StyledButton>
 				</InputContainer>
 			</Form>

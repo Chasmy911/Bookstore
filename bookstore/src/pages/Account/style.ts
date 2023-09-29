@@ -2,7 +2,11 @@ import { TabPanel } from '@mui/lab';
 
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`padding: 100px 10px;`;
+export const Wrapper = styled.div`
+	padding: 100px 10px;
+	min-height: 100vh;
+	background-color: ${(props) => props.theme.palette.primary.background};
+`;
 
 export const Title = styled.h2`
 	text-transform: uppercase;
@@ -37,6 +41,7 @@ export const StyledWrapper = styled.div`
 	border: 2px solid black;
 	height: 50%;
 	margin: 200px auto;
+	background-color: ${(props) => props.theme.palette.primary.background};
 `;
 
 export const StyledTab = styled(TabPanel)`
@@ -46,6 +51,8 @@ export const StyledTab = styled(TabPanel)`
 	font-style: normal;
 	font-weight: 400;
 	line-height: 32px;
+	background-color: ${(props) => props.theme.palette.primary.background};
+
 `;
 
 export const StyledForm = styled.form`
@@ -106,6 +113,8 @@ export const StyledButton = styled.button`
 	font-size: 20px;
 	font-style: normal;
 	padding: 5px 0;
+
+	background-color: black;
 
 	& a {
 		color: white;

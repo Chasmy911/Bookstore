@@ -3,12 +3,12 @@ import { SignUpTypes } from './SignUpActions';
 
 type defaultStateType = {
 	isSignUpSuccessful: boolean;
-	SignUpData: ISignUpUserData | null;
+	signUpData: ISignUpUserData | null;
 };
 
 const defaultState: defaultStateType = {
 	isSignUpSuccessful: false,
-	SignUpData: null
+	signUpData: null
 };
 
 export const userInfoReducer = (

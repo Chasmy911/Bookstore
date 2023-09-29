@@ -61,7 +61,7 @@ export const userRoutes: UserRoutes[] = [
 		path: '/sign-up/success',
 		Component: SignUpSuccess,
 		title: 'Sign Up Successs',
-		strict: true
+		strict: false
 	},
 	{
 		id: 7,

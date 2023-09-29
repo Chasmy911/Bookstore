@@ -8,6 +8,7 @@ export const StyledItem = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	align-self: stretch;
+	background-color: ${(props) => props.theme.palette.primary.background};
 
 	& a {
 		display: flex;
@@ -51,6 +52,7 @@ export const StyledTitle = styled.h2`
 
 export const StyledInfo = styled.div`
 	width: 100%;
+
 	@media (max-width: 950px) {
 		width: 90%;
 	}
@@ -61,7 +63,7 @@ export const ArticleContainer = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	padding: 10px 0;
-	color: #a8a8a8;
+	color: black;
 `;
 
 export const PriceContainer = styled.div`

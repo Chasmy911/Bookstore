@@ -34,16 +34,16 @@ const SignUpForm = () => {
 		getSignUpData(data);
 	};
 
-	const { isSignUpSuccessful, SignUpData } = useTypedSelector((state) => state.signUpData);
+	const { isSignUpSuccessful, signUpData } = useTypedSelector((state) => state.signUpData);
 	const navigate = useNavigate();
 
 	useEffect(
 		() => {
-			if (isSignUpSuccessful && SignUpData) {
+			if (isSignUpSuccessful && signUpData) {
 				navigate('/sign-up/success');
 			}
 		},
-		[ isSignUpSuccessful, SignUpData ]
+		[ isSignUpSuccessful, signUpData ]
 	);
 
 	const error: SubmitErrorHandler<ISignUpUserData> = (data) => {
@@ -86,7 +86,9 @@ const SignUpForm = () => {
 			<StyledLabel>
 				Confirm password:
 				<StyledInput
-					{...register('repeatPassword', { required: true })}
+					{...register('repeatPassword', {
+						required: true
+					})}
 					placeholder="Confirm your password"
 					type="password"
 					autoComplete="off"

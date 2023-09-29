@@ -8,6 +8,7 @@ export const SelectedBookContainer = styled.div`
 	padding: 100px 30px;
 	background-color: white;
 	margin: 0 auto;
+	background-color: ${(props) => props.theme.palette.primary.background};
 `;
 
 export const Title = styled.h2`
@@ -84,7 +85,7 @@ export const Info = styled.div`
 `;
 
 export const InfoName = styled.div`
-	color: #a8a8a8;
+	color: #313037;
 
 	font-family: Helios;
 	font-size: 16px;

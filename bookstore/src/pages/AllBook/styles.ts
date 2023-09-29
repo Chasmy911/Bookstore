@@ -5,6 +5,7 @@ export const AllBookContainer = styled.div`
 	max-width: 1120px;
 	margin: 0 auto;
 	padding: 100px 10px;
+	background-color: ${(props) => props.theme.palette.primary.background};
 `;
 
 export const BookContainer = styled.div`

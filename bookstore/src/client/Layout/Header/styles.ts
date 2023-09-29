@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { IconButton } from '@mui/material';
-import Search from './Search/Search';
 
 export const StyledHeader = styled.header`
 	height: 100px;
@@ -15,6 +14,7 @@ export const StyledHeader = styled.header`
 	width: 100%;
 	max-width: 1120px;
 	z-index: 111;
+	background-color: ${(props) => props.theme.palette.primary.background};
 `;
 
 export const StyledContainer = styled.div`

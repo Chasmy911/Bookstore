@@ -9,6 +9,9 @@ export const SignUpWrapper = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	padding: 100px 10px;
+
+	background-color: ${(props) => props.theme.palette.primary.background};
+
 	@media (max-width: 700px) {
 		width: 80%;
 	}
@@ -33,7 +36,7 @@ export const StyledButton = styled.button`
 	margin: 10px auto;
 	color: white;
 	background: black;
-	padding: 16px 40px;
+	padding: 16px 10px;
 	text-transform: uppercase;
 	font-family: Bebas Neue;
 	font-size: 18px;
@@ -43,6 +46,8 @@ export const StyledButton = styled.button`
 	letter-spacing: 0.9px;
 
 	& a {
+		display: block;
+		width: 100%;
 		color: white;
 	}
 
@@ -89,4 +94,12 @@ export const Title = styled.h3`
 	@media (max-width: 450px) {
 		font-size: 20px;
 	}
+`;
+
+export const Container = styled.div`
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: ${(props) => props.theme.palette.primary.background};
 `;

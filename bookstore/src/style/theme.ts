@@ -6,14 +6,14 @@ export enum ThemeModes {
 const palette = {
 	[ThemeModes.LIGHT]: {
 		primary: {
-			background: 'white',
+			background: '#FFFFFF',
 			letterColor: 'black'
 		}
 	},
 	[ThemeModes.DARK]: {
 		primary: {
-			background: 'black',
-			letterColor: 'grey'
+			background: '#A9A9A9',
+			letterColor: 'white'
 		}
 	}
 };
@@ -27,3 +27,6 @@ export const CreateTheme = (mode: ThemeModes) => {
 		}
 	};
 };
+
+// background-color: ${(props) => props.theme.palette.primary.background};
+// 	color: ${(props) => props.theme.palette.primary.letterColor};

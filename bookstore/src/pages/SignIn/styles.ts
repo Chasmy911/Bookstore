@@ -3,9 +3,12 @@ import styled from 'styled-components';
 
 export const StyledWrapper = styled.div`
 	width: 50%;
+
 	border: 2px solid black;
 	height: 50%;
-	margin: 200px auto;
+
+	background-color: ${(props) => props.theme.palette.primary.background};
+	color: ${(props) => props.theme.palette.primary.letterColor};
 
 	@media (max-width: 700px) {
 		width: 70%;
@@ -56,4 +59,12 @@ export const StyledInput = styled.input`
 		padding: 15px;
 		color: grey;
 	}
+`;
+
+export const Container = styled.div`
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: ${(props) => props.theme.palette.primary.background};
 `;

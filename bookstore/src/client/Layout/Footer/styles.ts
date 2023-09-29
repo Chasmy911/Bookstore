@@ -11,6 +11,10 @@ export const StyledFooter = styled('footer')`
 	max-width: 1120px;
 	width: 100%;
 	height: 60px;
-	margin: 0 auto
+	margin: 0 auto;
+
+	background-color: ${(props) => props.theme.palette.primary.background};
+	
+
 	
 `;

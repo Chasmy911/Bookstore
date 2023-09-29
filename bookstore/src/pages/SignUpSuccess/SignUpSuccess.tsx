@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { SignUpWrapper, StyledButton,  StyledStr, Title, TitleWrapper } from './styles';
-import { NavLink, useParams } from 'react-router-dom';
+import { Container, SignUpWrapper, StyledButton,  StyledStr, Title, TitleWrapper } from './styles';
+import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import { useTypedSelector } from '../../store/hooks/useTypedSelector';
 import { UserApi } from '../../client/api/userApi';
 
@@ -12,36 +12,44 @@ const SignUpSuccess = () => {
 	const { uid, token } = useParams();
 	const [ activationStatus, setActivationStatus ] = useState<number | null>(null);
 
+	const navigate = useNavigate()
+
+	const goHome = () => {
+		navigate('/')
+	}
+
 	useEffect(
 		() => {
 			if (uid && token) {
+				
 				UserApi.activateUserAccount(uid, token).then((request) => setActivationStatus(Number(request.status)));
 			}
 		},
 		[ uid, token ]
 	);
 
-	const userInfo = useTypedSelector((state) => state.signUpData.SignUpData);
+	const userInfo = useTypedSelector((state) => state.signUpData.signUpData);
 	return (
-		<div>
+		<Container>
 			{activationStatus === null ? (
 				<div>
 					<SignUpWrapper>
-						<StyledStr>Back home</StyledStr>
+						
 						<TitleWrapper>
 							<Title> Registration Confirmation</Title>
 							<p>Dear {userInfo?.username}, your registration was successful. Go to your {userInfo?.email} to confirm registration</p>
 						</TitleWrapper>
-
-						<StyledButton>
-							<NavLink to={'/'}>Go to home</NavLink>
+						
+						<StyledButton onClick={goHome}>
+							Go to home
 						</StyledButton>
+						
 					</SignUpWrapper>
 				</div>
 			) : (
 				<div>
 					<SignUpWrapper>
-						<StyledStr>Back home</StyledStr>
+						
 						<TitleWrapper>
 							<Title> Account activation</Title>
 							{activationStatus === ActivationStatus.SUCCESS ? (
@@ -63,7 +71,7 @@ const SignUpSuccess = () => {
 					</SignUpWrapper>
 				</div>
 			)}
-		</div>
+		</Container>
 	);
 };
 

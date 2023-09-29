@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyledTab, StyledWrapper } from './styles';
+import { Container, StyledTab, StyledWrapper } from './styles';
 import { Box, Tab } from '@mui/material';
 import { TabContext, TabList } from '@mui/lab';
 import LoginForm from '../../client/components/LogInForm/LoginForm';
@@ -13,30 +13,32 @@ const SignIn = () => {
 	};
 
 	return (
-		<StyledWrapper>
-			<Box>
-				<TabContext value={value}>
-					<Box>
-						<TabList
-							onChange={handleChange}
-							centered
-							textColor="inherit"
-							indicatorColor="primary"
-							variant="fullWidth"
-						>
-							<Tab label="SIGN IN" value="1" />
-							<Tab label="SIGN UP" value="2" />
-						</TabList>
-					</Box>
-					<StyledTab value="1">
-						<LoginForm />
-					</StyledTab>
-					<StyledTab value="2">
-						<SignUpForm />
-					</StyledTab>
-				</TabContext>
-			</Box>
-		</StyledWrapper>
+		<Container>
+			<StyledWrapper>
+				<Box>
+					<TabContext value={value}>
+						<Box>
+							<TabList
+								onChange={handleChange}
+								centered
+								textColor="inherit"
+								indicatorColor="primary"
+								variant="fullWidth"
+							>
+								<Tab label="SIGN IN" value="1" />
+								<Tab label="SIGN UP" value="2" />
+							</TabList>
+						</Box>
+						<StyledTab value="1">
+							<LoginForm />
+						</StyledTab>
+						<StyledTab value="2">
+							<SignUpForm />
+						</StyledTab>
+					</TabContext>
+				</Box>
+			</StyledWrapper>
+		</Container>
 	);
 };
 

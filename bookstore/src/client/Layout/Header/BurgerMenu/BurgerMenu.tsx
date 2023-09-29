@@ -16,6 +16,7 @@ import { Close, PersonOutlineOutlined, Menu } from '@mui/icons-material';
 import { NavLink, Navigate } from 'react-router-dom';
 import { IAccountData } from '../../../../types';
 import Search from '../Search/Search';
+import ThemeToggler from './ThemeToggler/ThemeToggler';
 
 interface IBurgerProps {
 	user?: IAccountData;
@@ -68,7 +69,9 @@ const BurgerMenu: FC<IBurgerProps> = () => {
 							</div>
 						)}
 					</StyledList>
-
+					<div>
+						<ThemeToggler />
+					</div>
 					<div>
 						{isLoggedIn ? (
 							<StyledButtonCart>LOG OUT</StyledButtonCart>
