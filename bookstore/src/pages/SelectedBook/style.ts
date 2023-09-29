@@ -14,7 +14,7 @@ export const SelectedBookContainer = styled.div`
 export const Title = styled.h2`
 	text-transform: uppercase;
 	color: #313037;
-	font-family: Bebas Neue;
+	font-family: 'Bebas Neue', sans-serif;
 	font-size: 46px;
 	font-style: normal;
 	font-weight: 700;
@@ -87,7 +87,7 @@ export const Info = styled.div`
 export const InfoName = styled.div`
 	color: #313037;
 
-	font-family: Helios;
+	font-family: 'Helios', sans-serif;
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 400;
@@ -96,7 +96,7 @@ export const InfoName = styled.div`
 
 export const InfoValue = styled.div`
 	color: #313037;
-	font-family: Helios;
+	font-family: 'Helios', sans-serif;
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 400;
@@ -105,7 +105,7 @@ export const InfoValue = styled.div`
 
 export const Price = styled.div`
 	color: #313037;
-	font-family: Bebas Neue;
+	font-family: 'Bebas Neue', sans-serif;
 	font-size: 40px;
 	font-style: normal;
 	font-weight: 700;
@@ -118,7 +118,7 @@ export const Price = styled.div`
 
 export const StyledTab = styled(TabPanel)`
 	color: #313037;
-	font-family: Helios;
+	font-family: 'Helios', sans-serif;
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 400;
@@ -143,7 +143,7 @@ export const StyledButtonCart = styled.button`
 	background: black;
 	padding: 16px 40px;
 	text-transform: uppercase;
-	font-family: Bebas Neue;
+	font-family: 'Bebas Neue', sans-serif;
 	font-size: 18px;
 	font-style: normal;
 	font-weight: 700;
@@ -162,7 +162,7 @@ export const StyledButtonCart = styled.button`
 export const SliderTitle = styled.div`
 	margin-top: 20px;
 	color: #313037;
-	font-family: Bebas Neue;
+	font-family: 'Bebas Neue', sans-serif;
 	font-size: 40px;
 	font-style: normal;
 	font-weight: 700;

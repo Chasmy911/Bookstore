@@ -28,7 +28,7 @@ export const BookContainer = styled.div`
 
 export const Title = styled.h2`
 	width: 100%;
-	font-family: Bebas Neue;
+	font-family: 'Bebas Neue', sans-serif;
 	text-transform: uppercase;
 	font-size: 50px;
 	font-style: normal;

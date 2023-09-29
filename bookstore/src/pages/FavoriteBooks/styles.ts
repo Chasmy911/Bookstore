@@ -14,7 +14,7 @@ export const BookContainer = styled.div`
 `;
 
 export const Title = styled.h2`
-	font-family: Bebas Neue;
+	font-family: ''Bebas Neue', sans-serif';
 	text-transform: uppercase;
 	font-size: 50px;
 	font-style: normal;
@@ -35,7 +35,7 @@ export const Title = styled.h2`
 export const SliderTitle = styled.div`
 	margin-top: 20px;
 	color: #313037;
-	font-family: Bebas Neue;
+	font-family: 'Bebas Neue', sans-serif;
 	font-size: 40px;
 	font-style: normal;
 	font-weight: 700;

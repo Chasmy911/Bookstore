@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 export const Title = styled.h2`
 	text-transform: uppercase;
 	color: #313037;
-	font-family: Bebas Neue;
+	font-family: 'Bebas Neue', sans-serif;
 	font-size: 36px;
 	font-style: normal;
 	font-weight: 700;
@@ -25,7 +25,7 @@ export const Title = styled.h2`
 export const SybTitle = styled.h4`
 	text-transform: uppercase;
 	color: #313037;
-	font-family: Bebas Neue;
+	font-family: 'Bebas Neue', sans-serif;
 	font-size: 24px;
 	font-style: normal;
 	font-weight: 700;
@@ -46,7 +46,7 @@ export const StyledWrapper = styled.div`
 
 export const StyledTab = styled(TabPanel)`
 	color: #313037;
-	font-family: Helios;
+	font-family: 'Helios', sans-serif;
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 400;
@@ -109,7 +109,7 @@ export const StyledButton = styled.button`
 	background-color: black;
 	color: white;
 	text-transform: uppercase;
-	font-family: Bebas Neue;
+	font-family: 'Bebas Neue', sans-serif;
 	font-size: 20px;
 	font-style: normal;
 	padding: 5px 0;
@@ -139,7 +139,7 @@ export const StyledWhiteButton = styled.button`
 	background-color: white;
 	color: black;
 	text-transform: uppercase;
-	font-family: Bebas Neue;
+	font-family: 'Bebas Neue', sans-serif;
 	font-size: 20px;
 	font-style: normal;
 	padding: 5px 0;

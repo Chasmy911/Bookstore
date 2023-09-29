@@ -14,7 +14,7 @@ export const StyledWrapper = styled.div`
 
 export const StyledTab = styled(TabPanel)`
 	color: #313037;
-	font-family: Helios;
+	font-family: 'Helios', sans-serif;
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 400;
@@ -77,7 +77,7 @@ export const StyledButton = styled.button`
 	background-color: black;
 	color: white;
 	text-transform: uppercase;
-	font-family: Bebas Neue;
+	font-family: 'Bebas Neue', sans-serif;
 	font-size: 20px;
 	font-style: normal;
 	padding: 5px 0;

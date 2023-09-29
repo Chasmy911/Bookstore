@@ -9,7 +9,7 @@ export const UserApi = {
 	resetPassword: (newPassword: string, password: string, token: string) =>
 		user.post('/auth/users/set_password/', {
 			headers: {
-				Authorization: `Bearer ${token}`
+				Authentication: `Bearer ${token}`
 			},
 			new_password: newPassword,
 			current_password: password

@@ -38,7 +38,7 @@ export const StyledButton = styled.button`
 	background: black;
 	padding: 16px 10px;
 	text-transform: uppercase;
-	font-family: Bebas Neue;
+	font-family: 'Bebas Neue', sans-serif;
 	font-size: 18px;
 	font-style: normal;
 	font-weight: 700;
@@ -84,7 +84,7 @@ export const TitleWrapper = styled.div`
 
 export const Title = styled.h3`
 	color: #313037;
-	font-family: Bebas Neue;
+	font-family: 'Bebas Neue', sans-serif;
 	font-size: 24px;
 	padding: 15px;
 	font-style: normal;

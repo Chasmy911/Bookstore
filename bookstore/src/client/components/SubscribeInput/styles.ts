@@ -21,7 +21,7 @@ export const Container = styled.div`
 
 export const Title = styled.label`
 	color: #313037;
-	font-family: Bebas Neue;
+	font-family: 'Bebas Neue', sans-serif;
 	text-transform: uppercase;
 	font-size: 30px;
 	font-style: normal;
@@ -78,7 +78,7 @@ export const StyledButton = styled.button`
 	align-items: center;
 
 	text-transform: uppercase;
-	font-family: Bebas Neue;
+	font-family: 'Bebas Neue', sans-serif;
 	font-size: 18px;
 	font-style: normal;
 	font-weight: 700;

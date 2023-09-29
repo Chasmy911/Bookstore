@@ -48,7 +48,7 @@ export const StyledLi = styled.li`
 	height: 50px;
 	border-bottom: 1px solid grey;
 	color: #313037;
-	font-family: Bebas Neue;
+	font-family: 'Bebas Neue', sans-serif;
 	font-size: 32px;
 	font-style: normal;
 	font-weight: 700;
@@ -107,7 +107,7 @@ export const StyledButtonCart = styled.button`
 	background: black;
 	padding: 16px 40px;
 	text-transform: uppercase;
-	font-family: Bebas Neue;
+	font-family: 'Bebas Neue', sans-serif;
 	font-size: 18px;
 	font-style: normal;
 	font-weight: 700;

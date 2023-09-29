@@ -26,7 +26,7 @@ export const ThanksPopUp = styled.div`
 `;
 
 export const Title = styled.h2`
-	font-family: Bebas Neue;
+	font-family: 'Bebas Neue', sans-serif;
 	text-transform: uppercase;
 	font-size: 50px;
 	font-style: normal;
@@ -64,7 +64,7 @@ export const Info = styled.div`
 export const InfoName = styled.div`
 	color: #a8a8a8;
 
-	font-family: Helios;
+	font-family: 'Helios', sans-serif;
 	font-size: 20px;
 	font-style: normal;
 	font-weight: 400;
@@ -73,7 +73,7 @@ export const InfoName = styled.div`
 
 export const InfoValue = styled.div`
 	color: #313037;
-	font-family: Helios;
+	font-family: 'Helios', sans-serif;
 	font-size: 20px;
 	font-style: normal;
 	font-weight: 400;
@@ -84,7 +84,7 @@ export const TotalDiv = styled.div`
 	display: flex;
 	justify-content: space-between;
 	color: #313037;
-	font-family: Bebas Neue;
+	font-family: 'Bebas Neue', sans-serif;
 	font-size: 30px;
 	font-style: normal;
 	font-weight: 700;
@@ -104,7 +104,7 @@ export const StyledButton = styled.button`
 	background-color: black;
 	color: white;
 	text-transform: uppercase;
-	font-family: Bebas Neue;
+	font-family: 'Bebas Neue', sans-serif;
 	font-size: 20px;
 	font-style: normal;
 	padding: 5px 0;

@@ -45,7 +45,7 @@ export const StyledCartBookInfo = styled.div`max-width: 670px;`;
 
 export const StyledTitle = styled.h2`
 	color: #313037;
-	font-family: Bebas Neue;
+	font-family: 'Bebas Neue', sans-serif;
 	text-transform: uppercase;
 	padding: 10px 0;
 	font-size: 24px;
@@ -78,7 +78,7 @@ export const PriceContainer = styled.div`
 
 export const Price = styled.div`
 	color: #313037;
-	font-family: Bebas Neue;
+	font-family: 'Bebas Neue', sans-serif;
 	font-size: 24px;
 	font-style: normal;
 	font-weight: 700;

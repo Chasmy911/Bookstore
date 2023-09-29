@@ -21,7 +21,7 @@ export const StyledWrapper = styled.div`
 
 export const StyledTab = styled(TabPanel)`
 	color: #313037;
-	font-family: Helios;
+	font-family: 'Helios', sans-serif;
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 400;

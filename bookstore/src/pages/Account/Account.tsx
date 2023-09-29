@@ -20,6 +20,7 @@ import { useTypedSelector } from '../../store/hooks/useTypedSelector';
 import { logInActions } from '../../store/LogIn/LogInActions';
 import { useDispatch } from 'react-redux';
 import { signUpActions } from '../../store/SignUpData/SignUpActions';
+import { useActions } from '../../store/hooks/useActions';
 
 const Account = () => {
 	const user = useTypedSelector((state) => state.userInfo.userInfo);
@@ -47,9 +48,12 @@ const Account = () => {
 		},
 		[ formState, reset ]
 	);
+	const { resetPasswordAsync } = useActions();
+	const accessToken = localStorage.getItem('access_token');
+	const rightToken = JSON.parse(accessToken!);
 
 	const submit: SubmitHandler<IAccountData> = (data) => {
-		console.log(data);
+		resetPasswordAsync(data.password, data.newPassword, rightToken!);
 	};
 
 	const error: SubmitErrorHandler<IAccountData> = (data) => {
