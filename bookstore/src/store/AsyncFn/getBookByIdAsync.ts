@@ -9,9 +9,13 @@ const getBook = async (isbn13: string): Promise<IBook> => {
 };
 
 export const getSelectedBookAsync = (isbn13: string) => {
-	return (dispatch: Dispatch) => {
-		getBook(isbn13).then((data) => {
-			return dispatch(selectedBookAction.setSelectedBook(data));
-		});
-	};
+	try {
+		return (dispatch: Dispatch) => {
+			getBook(isbn13).then((data) => {
+				return dispatch(selectedBookAction.setSelectedBook(data));
+			});
+		};
+	} catch (e) {
+		console.log(e);
+	}
 };

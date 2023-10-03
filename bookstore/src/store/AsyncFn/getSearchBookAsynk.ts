@@ -7,9 +7,13 @@ const getSearchBook = async (value: string, page: number): Promise<any> => {
 };
 
 export const getSearchBooksAsync = (value: string, page: number) => {
-	return (dispatch: Dispatch) => {
-		getSearchBook(value, page).then((data) => {
-			dispatch(allBooksActions.setSearchBooks(data.data));
-		});
-	};
+	try {
+		return (dispatch: Dispatch) => {
+			getSearchBook(value, page).then((data) => {
+				dispatch(allBooksActions.setSearchBooks(data.data));
+			});
+		};
+	} catch (e) {
+		console.log(e);
+	}
 };

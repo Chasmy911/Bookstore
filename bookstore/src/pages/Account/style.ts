@@ -104,7 +104,7 @@ export const StyledButton = styled.button`
 	justify-content: center;
 	align-items: center;
 	margin: 10px auto 0;
-	width: 30%;
+	width: 25%;
 	height: 40px;
 	background-color: black;
 	color: white;
@@ -126,6 +126,7 @@ export const StyledButton = styled.button`
 
 	@media (max-width: 850px) {
 		font-size: 16px;
+		width: 30%;
 	}
 `;
 
@@ -134,7 +135,7 @@ export const StyledWhiteButton = styled.button`
 	justify-content: center;
 	align-items: center;
 	margin: 10px auto 0;
-	width: 30%;
+	width: 25%;
 	height: 40px;
 	background-color: white;
 	color: black;
@@ -168,7 +169,7 @@ export const ProfileContainer = styled.div`
 
 export const ButtonContainer = styled.div`
 	display: flex;
-	width: 60%;
+	width: 100%;
 	justify-content: space-between;
 	text-align: right;
 	margin-top: 40px;

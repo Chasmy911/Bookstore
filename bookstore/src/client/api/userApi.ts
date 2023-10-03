@@ -6,14 +6,19 @@ export const UserApi = {
 	activateUserAccount: (uid: string, token: string) =>
 		user.post('/auth/users/activation/', { uid: uid, token: token }),
 	loginUser: ({ email, password }: ILogInUserData) => user.post('/auth/jwt/create/', { email, password }),
-	resetPassword: (newPassword: string, password: string, token: string) =>
-		user.post('/auth/users/set_password/', {
-			headers: {
-				Authentication: `Bearer ${token}`
+	changePassword: (newPassword: string, password: string, token: string) =>
+		user.post(
+			'/auth/users/set_password/',
+			{
+				new_password: newPassword,
+				current_password: password
 			},
-			new_password: newPassword,
-			current_password: password
-		}),
+			{
+				headers: {
+					Authorization: `Bearer ${token}`
+				}
+			}
+		),
 	fetchUserInfo: (token: string) =>
 		user.get('/auth/users/me/', {
 			headers: {

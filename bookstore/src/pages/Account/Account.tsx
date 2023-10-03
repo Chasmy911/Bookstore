@@ -48,12 +48,12 @@ const Account = () => {
 		},
 		[ formState, reset ]
 	);
-	const { resetPasswordAsync } = useActions();
+	const { changePasswordAsync } = useActions();
 	const accessToken = localStorage.getItem('access_token');
 	const rightToken = JSON.parse(accessToken!);
 
 	const submit: SubmitHandler<IAccountData> = (data) => {
-		resetPasswordAsync(data.password, data.newPassword, rightToken!);
+		changePasswordAsync(data.newPassword, data.password, rightToken!);
 	};
 
 	const error: SubmitErrorHandler<IAccountData> = (data) => {
@@ -131,7 +131,7 @@ const Account = () => {
 						<NavLink to="/"> Log out</NavLink>
 					</StyledButton>
 					<StyledButton type="submit" onClick={() => submit}>
-						Reset Password
+						Change Password
 					</StyledButton>
 
 					<StyledWhiteButton type="submit">

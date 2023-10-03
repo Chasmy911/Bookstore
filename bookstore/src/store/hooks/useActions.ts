@@ -11,7 +11,7 @@ import { signUpActions } from '../SignUpData/SignUpActions';
 import { getLogInUserAsync } from '../AsyncFn/getLogInUserAsync';
 import { getNewTokensAsync } from '../AsyncFn/getNewTokensAsync';
 import { burgerActions } from '../Burger/BurgerActions';
-import { resetPasswordAsync } from '../AsyncFn/resetPassword';
+import { changePasswordAsync } from '../AsyncFn/resetPassword';
 
 export const useActions = () => {
 	const dispatch = useDispatch();
@@ -28,7 +28,7 @@ export const useActions = () => {
 			getSearchBooksAsync,
 			getLogInUserAsync,
 			getNewTokensAsync,
-			resetPasswordAsync
+			changePasswordAsync
 		},
 		dispatch
 	);

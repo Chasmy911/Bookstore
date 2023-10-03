@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const BurgerMenuWrapper = styled.div`
+	background-color: ${(props) => props.theme.palette.primary.background};
 	display: none;
 
 	@media (max-width: 800px) {
@@ -10,18 +11,19 @@ export const BurgerMenuWrapper = styled.div`
 		align-items: center;
 		width: 30px;
 		height: 30px;
-
+		background-color: ${(props) => props.theme.palette.primary.background};
 		transition: all 0.3s;
 		margin-bottom: 5px;
 	}
 `;
 
 export const StyledModal = styled.div`
+	background-color: ${(props) => props.theme.palette.primary.background};
 	position: fixed;
 	height: 100%;
 	z-index: 999;
 	width: 50%;
-	background: white;
+
 	top: 0;
 	right: 0;
 	display: flex;
@@ -56,7 +58,7 @@ export const StyledLi = styled.li`
 	text-transform: uppercase;
 	& a {
 		text-decoration: none;
-		color: ${(props) => props.theme.palette.primary.letterColor};
+		color: black;
 	}
 	&:hover {
 		background-color: #f3f3f3;
