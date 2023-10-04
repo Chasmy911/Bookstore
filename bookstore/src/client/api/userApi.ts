@@ -19,6 +19,12 @@ export const UserApi = {
 				}
 			}
 		),
+	resetPassword: (email: string) =>
+		user.post('/auth/users/reset_password/', {
+			email
+		}),
+	resetPasswordConfirm: (uid: string, token: string, newPassword: string) =>
+		user.post('/auth/users/reset_password_confirm/', { uid: uid, token: token, new_password: newPassword }),
 	fetchUserInfo: (token: string) =>
 		user.get('/auth/users/me/', {
 			headers: {

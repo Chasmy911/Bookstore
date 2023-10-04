@@ -6,6 +6,9 @@ import SignIn from '../../pages/SignIn/SignIn';
 import Account from '../../pages/Account/Account';
 import SignUpSuccess from '../../pages/SignUpSuccess/SignUpSuccess';
 
+import ResetPasswordConfirmForm from '../components/ResetPasswordConfirm/ResetPasswordConfirm';
+import ResetPasswordPage from '../../pages/ResetPasswordPage/ResetPasswordPage';
+
 type UserRoutes = {
 	id: number;
 	path: string;
@@ -68,5 +71,26 @@ export const userRoutes: UserRoutes[] = [
 		path: '/activate/:uid/:token',
 		Component: SignUpSuccess,
 		title: 'Succeessfully activation'
+	},
+
+	{
+		id: 8,
+		path: '/reset_password',
+		Component: ResetPasswordPage,
+		title: 'Reset password'
+	},
+
+	{
+		id: 9,
+		path: '/reset_password/confirm',
+		Component: ResetPasswordConfirmForm,
+		title: 'Reset password confirm'
+	},
+
+	{
+		id: 10,
+		path: '/password/reset/confirm/:uid/:token',
+		Component: ResetPasswordConfirmForm,
+		title: 'Reset password confirm'
 	}
 ];

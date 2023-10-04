@@ -1,12 +1,22 @@
 import { Dispatch } from 'redux';
 import { UserApi } from '../../client/api/userApi';
 
-const changePassword = async (newPassword: string, password: string, token: string): Promise<any> => {
-	return await UserApi.changePassword(newPassword, password, token);
+const resetPassword = async (email: string): Promise<any> => {
+	return await UserApi.resetPassword(email);
 };
 
-export const changePasswordAsync = (newPassword: string, password: string, token: string) => {
+export const resetPasswordAsync = (email: string) => {
 	return (dispatch: Dispatch) => {
-		changePassword(newPassword, password, token).then((data) => console.log(data));
+		resetPassword(email).then((data) => console.log(data));
+	};
+};
+
+const resetPasswordConfirm = async (uid: string, token: string, newPassword: string): Promise<any> => {
+	return await UserApi.resetPasswordConfirm(uid, token, newPassword);
+};
+
+export const resetPasswordConfirmAsync = (uid: string, token: string, newPassword: string) => {
+	return (dispatch: Dispatch) => {
+		resetPasswordConfirm(uid, token, newPassword).then((data) => console.log(data));
 	};
 };

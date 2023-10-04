@@ -5,7 +5,8 @@ import { StyledButton, StyledForm, StyledInput, StyledLabel } from './styles';
 import { useActions } from '../../../store/hooks/useActions';
 import { useSelector } from 'react-redux';
 import { useTypedSelector } from '../../../store/hooks/useTypedSelector';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { Button } from '@mui/material';
 
 const LoginForm = () => {
 	const { register, handleSubmit, formState, formState: { errors, isSubmitSuccessful }, reset } = useForm<
@@ -26,7 +27,7 @@ const LoginForm = () => {
 		[ formState, reset ]
 	);
 
-	const { getLogInUserAsync } = useActions();
+	const { getLogInUserAsync, resetPasswordAsync } = useActions();
 
 	const submit: SubmitHandler<ILogInUserData> = (data) => {
 		getLogInUserAsync(data);
@@ -70,6 +71,9 @@ const LoginForm = () => {
 			</StyledLabel>
 
 			<StyledButton type="submit">Log in</StyledButton>
+			<p>
+				<NavLink to="/reset_password">Forgot password? </NavLink>
+			</p>
 		</StyledForm>
 	);
 };
