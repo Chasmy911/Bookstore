@@ -14,6 +14,7 @@ const ResetPasswordForm = () => {
 	});
 
 	const navigate = useNavigate();
+	const { uid, token } = useParams();
 
 	React.useEffect(
 		() => {
@@ -37,6 +38,10 @@ const ResetPasswordForm = () => {
 	};
 
 	if (formState.isSubmitSuccessful) {
+		navigate('/reset_password_check');
+	}
+
+	if (uid && token) {
 		navigate('/reset_password/confirm');
 	}
 

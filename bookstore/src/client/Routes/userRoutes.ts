@@ -8,6 +8,8 @@ import SignUpSuccess from '../../pages/SignUpSuccess/SignUpSuccess';
 
 import ResetPasswordConfirmForm from '../components/ResetPasswordConfirm/ResetPasswordConfirm';
 import ResetPasswordPage from '../../pages/ResetPasswordPage/ResetPasswordPage';
+import check from '../components/ResetPassword/check';
+import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage';
 
 type UserRoutes = {
 	id: number;
@@ -92,5 +94,17 @@ export const userRoutes: UserRoutes[] = [
 		path: '/password/reset/confirm/:uid/:token',
 		Component: ResetPasswordConfirmForm,
 		title: 'Reset password confirm'
+	},
+	{
+		id: 11,
+		path: '/reset_password_check',
+		Component: check,
+		title: 'Reset password confirm'
+	},
+	{
+		id: 99999999999999999,
+		path: '/*',
+		Component: NotFoundPage,
+		title: 'Page not found'
 	}
 ];

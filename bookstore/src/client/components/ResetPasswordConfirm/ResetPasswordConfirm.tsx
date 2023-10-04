@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
-import { StyledButton, StyledForm, StyledInput, StyledLabel, StyledWrapper } from './styles';
+import { Container, StyledButton, StyledForm, StyledInput, StyledLabel, StyledWrapper } from './styles';
 import { useActions } from '../../../store/hooks/useActions';
 import { useNavigate, useParams } from 'react-router-dom';
 
@@ -38,25 +38,27 @@ const ResetPasswordConfirmForm = () => {
 	};
 
 	if (formState.isSubmitSuccessful) {
-		navigate('/');
+		navigate('/sign_in');
 	}
 
 	return (
-		<StyledWrapper>
-			<StyledForm onSubmit={handleSubmit(submit, error)}>
-				<StyledLabel>
-					New password:
-					<StyledInput
-						{...register('new_password', { required: true })}
-						placeholder="Your password"
-						type="password"
-						autoComplete="on"
-					/>
-				</StyledLabel>
+		<Container>
+			<StyledWrapper>
+				<StyledForm onSubmit={handleSubmit(submit, error)}>
+					<StyledLabel>
+						New password:
+						<StyledInput
+							{...register('new_password', { required: true })}
+							placeholder="Your password"
+							type="password"
+							autoComplete="on"
+						/>
+					</StyledLabel>
 
-				<StyledButton type="submit">Reset</StyledButton>
-			</StyledForm>
-		</StyledWrapper>
+					<StyledButton type="submit">Reset</StyledButton>
+				</StyledForm>
+			</StyledWrapper>
+		</Container>
 	);
 };
 

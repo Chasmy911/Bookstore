@@ -5,6 +5,9 @@ export const StyledWrapper = styled.div`
 	border: 2px solid black;
 	height: 50%;
 	margin: 200px auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	@media (max-width: 700px) {
 		width: 70%;
@@ -16,7 +19,6 @@ export const StyledForm = styled.form`
 	flex-direction: column;
 	justify-content: center;
 	align-items: start;
-
 	margin: 0 auto;
 `;
 
@@ -83,4 +85,16 @@ export const StyledButton = styled.button`
 	@media (max-width: 650px) {
 		font-size: 14px;
 	}
+`;
+export const StyledP = styled.p`
+	padding: 50px;
+	border: 2px solid black;
+`;
+
+export const Container = styled.div`
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: ${(props) => props.theme.palette.primary.background};
 `;
