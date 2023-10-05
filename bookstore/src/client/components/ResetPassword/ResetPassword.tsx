@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
 import { StyledButton, StyledForm, StyledInput, StyledLabel, StyledWrapper } from './styles';
 import { useActions } from '../../../store/hooks/useActions';

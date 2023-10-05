@@ -14,15 +14,15 @@ import {
 	AmountContainer
 } from './styles';
 import { IBook } from '../../../types';
-
 import { Add, Close, Remove } from '@mui/icons-material';
 import { useActions } from '../../../store/hooks/useActions';
 import { IconButton } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { allBooksSelectors } from '../../../store/AllBooks/AllBooksSelector';
+import { NavLink } from 'react-router-dom';
 
 const CartBookItem = (book: IBook) => {
-	const { removeBookFromCart, plusAmountToCart, minusAmountToCart } = useActions();
+	const { removeBookFromCart, plusAmountToCart, minusAmountToCart, getSelectedBookAsync } = useActions();
 	const cartbookArr = useSelector(allBooksSelectors.getCartBooksSelector);
 	const cartBook = cartbookArr.find((item: IBook) => item.isbn13 === book?.isbn13);
 
@@ -41,14 +41,22 @@ const CartBookItem = (book: IBook) => {
 		}
 	};
 
-	return (
-		<StyledItem>
+	const getSelectedBook = () => {
+		getSelectedBookAsync(book.isbn13);
+	};
+
+	return ( 
+		
+		<StyledItem onClick={getSelectedBook}>
+			
 			<CartBookContainer>
 				<StyledImg>
 					<Image src={book.image} />
 				</StyledImg>
 				<StyledCartBookInfo>
+				<NavLink to={`/book/${book.isbn13}`}>
 					<StyledTitle>{book.title}</StyledTitle>
+					</NavLink>
 					<StyledInfo>
 						<ArticleContainer>
 							<div>Art.</div>
@@ -72,7 +80,11 @@ const CartBookItem = (book: IBook) => {
 			</CartBookContainer>
 
 			<Close color="action" onClick={removeBook} />
+			
 		</StyledItem>
+	
+			
+			
 	);
 };
 

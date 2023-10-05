@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, SignUpWrapper, StyledButton,  StyledStr, Title, TitleWrapper } from './styles';
+import { Container, SignUpWrapper, StyledButton, Title, TitleWrapper } from './styles';
 import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import { useTypedSelector } from '../../store/hooks/useTypedSelector';
 import { UserApi } from '../../client/api/userApi';

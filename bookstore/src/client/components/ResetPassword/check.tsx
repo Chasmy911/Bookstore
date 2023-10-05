@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, StyledP, StyledWrapper } from './styles';
+import { Container, StyledP } from './styles';
 
 const check = () => {
 	return (

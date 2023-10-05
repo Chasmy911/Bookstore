@@ -1,4 +1,3 @@
-import { ThemeModes } from '../../style/theme';
 import { BaseActionsWithPayload } from '../../types';
 import { burgerActionsType } from './BurgerActions';
 

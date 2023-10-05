@@ -13,7 +13,7 @@ import {
 	Title,
 	Wrapper
 } from './style';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { IconButton } from '@mui/material';
 import { KeyboardBackspace } from '@mui/icons-material';
 import { useTypedSelector } from '../../store/hooks/useTypedSelector';
@@ -51,9 +51,11 @@ const Account = () => {
 	const { changePasswordAsync } = useActions();
 	const accessToken = localStorage.getItem('access_token');
 	const rightToken = JSON.parse(accessToken!);
+	const navigate = useNavigate();
 
 	const submit: SubmitHandler<IAccountData> = (data) => {
 		changePasswordAsync(data.newPassword, data.password, rightToken!);
+		navigate('/');
 	};
 
 	const error: SubmitErrorHandler<IAccountData> = (data) => {

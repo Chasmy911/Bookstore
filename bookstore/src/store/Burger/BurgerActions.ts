@@ -1,4 +1,4 @@
-import { BaseActions, BaseActionsWithPayload } from '../../types';
+import { BaseActions } from '../../types';
 
 export enum burgerActionsType {
 	OPEN_BURGER = 'OPEN_BURGER',

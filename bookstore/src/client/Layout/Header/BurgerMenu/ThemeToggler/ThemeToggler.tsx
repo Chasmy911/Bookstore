@@ -2,7 +2,6 @@ import React from 'react';
 import { Button } from '@mui/material';
 import { DarkMode, LightMode } from '@mui/icons-material';
 import { ThemeWrapper } from './style';
-
 import { useDispatch } from 'react-redux';
 import { useTypedSelector } from '../../../../../store/hooks/useTypedSelector';
 import { ThemeModes } from '../../../../../style/theme';

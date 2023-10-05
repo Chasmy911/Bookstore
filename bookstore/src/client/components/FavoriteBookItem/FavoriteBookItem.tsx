@@ -13,25 +13,32 @@ import {
 	StyledFavDookInfo
 } from './styles';
 import { IBook } from '../../../types';
-
-import { Book, FavoriteBorder } from '@mui/icons-material';
+import { FavoriteBorder } from '@mui/icons-material';
 import { useActions } from '../../../store/hooks/useActions';
+import { NavLink } from 'react-router-dom';
 
 const FavoriteBookItem = (book: IBook) => {
-	const { deleteFromFavourite } = useActions();
+	const { deleteFromFavourite, getSelectedBookAsync } = useActions();
 
 	const deleteFavoriteBook = () => {
 		deleteFromFavourite(book.isbn13);
 	};
 
+	const getSelectedBook = () => {
+		getSelectedBookAsync(book.isbn13);
+	};
+
 	return (
-		<StyledItem>
+		<StyledItem onClick={getSelectedBook}>
 			<FavoriteBookContainer>
 				<StyledImg>
 					<Image src={book.image} />
 				</StyledImg>
 				<StyledFavDookInfo>
-					<StyledTitle>{book.title}</StyledTitle>
+					<NavLink to={`/book/${book.isbn13}`}>
+						<StyledTitle>{book.title}</StyledTitle>
+					</NavLink>
+
 					<StyledInfo>
 						<ArticleContainer>
 							<div>Art.</div>

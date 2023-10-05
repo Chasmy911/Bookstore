@@ -5,7 +5,6 @@ import Cart from '../../pages/Cart/Cart';
 import SignIn from '../../pages/SignIn/SignIn';
 import Account from '../../pages/Account/Account';
 import SignUpSuccess from '../../pages/SignUpSuccess/SignUpSuccess';
-
 import ResetPasswordConfirmForm from '../components/ResetPasswordConfirm/ResetPasswordConfirm';
 import ResetPasswordPage from '../../pages/ResetPasswordPage/ResetPasswordPage';
 import check from '../components/ResetPassword/check';

@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import { useActions } from '../../../../store/hooks/useActions';
 import { useDispatch } from 'react-redux';
 import { useTypedSelector } from '../../../../store/hooks/useTypedSelector';
